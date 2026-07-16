@@ -87,6 +87,46 @@ img {
   font-weight: 700;
 }
 
+.contact-panel__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+
+.line-account {
+  margin-top: 20px;
+  color: var(--text);
+}
+
+.contact-actions {
+  flex-wrap: wrap;
+}
+
+.contact-qr {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  color: var(--text);
+  text-align: center;
+  text-decoration: none;
+}
+
+.contact-qr img {
+  width: 220px;
+  height: 220px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.contact-qr span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 @media (max-width: 1100px) {
   .portfolio-preview {
     grid-template-columns: 1fr;
@@ -98,5 +138,13 @@ img {
 
   .portfolio-preview__heading .button {
     width: 100%;
+  }
+
+  .contact-panel__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-qr {
+    display: none;
   }
 }
