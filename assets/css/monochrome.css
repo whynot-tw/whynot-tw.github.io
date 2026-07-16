@@ -1,0 +1,70 @@
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f1f1f1;
+  --text: #111111;
+  --muted: #666666;
+  --line: #d8d8d8;
+  --accent: #666666;
+  --accent-dark: #111111;
+  --shadow: 0 16px 44px rgba(0, 0, 0, 0.07);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.site-header {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.brand-mark {
+  color: #ffffff;
+  background: #111111;
+}
+
+.hero-card {
+  background: linear-gradient(160deg, #ffffff, #eeeeee);
+}
+
+.button {
+  color: #ffffff;
+  background: #111111;
+  border-color: #111111;
+}
+
+.button.ghost,
+.button--secondary {
+  color: #111111;
+  background: #ffffff;
+  border-color: #111111;
+}
+
+.card,
+.hero-copy,
+.hero-card,
+.portfolio-preview__card,
+.work-card,
+.case-cover {
+  background: #ffffff;
+}
+
+.muted-panel,
+.contact-panel,
+.contact-box {
+  background: #f1f1f1;
+}
+
+.work-card__media {
+  background: linear-gradient(145deg, #f6f6f6, #e8e8e8);
+}
+
+.sticker-sprite {
+  background-image: url('../images/coco-stickers/coco-stickers-preview-v01.webp?v=20260716-2');
+}
+
+::selection {
+  color: #ffffff;
+  background: #111111;
+}
