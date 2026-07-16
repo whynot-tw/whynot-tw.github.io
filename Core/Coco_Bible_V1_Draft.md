@@ -1,104 +1,52 @@
-# Coco Universe — Character Bible V1 (Draft)
+# 可可宇宙｜角色公開簡介
 
-## 1. Core Identity
-Name: Coco  
-Species: Hedgehog  
-Position: A small hedgehog slowly exploring the world  
+> 本文件為公開展示版本。完整角色設定、故事線與創作規範未公開，另於私人工作區管理。
 
-Core Concept:
-- Understand the world at her own pace
-- Observe before acting
-- Quiet but perceptive  
+## 角色名稱
 
----
+可可（CoCo）
 
-## 2. Personality & Behavior
+## 角色定位
 
-Personality:
-- Gentle, calm, unhurried  
-- Curious but cautious  
-- Slightly stubborn in her own way  
+可可是一隻慢慢探索世界的小刺蝟。
 
-Behavior Rules:
-- Never runs, only walks slowly  
-- Frequently stops to observe  
-- Often daydreams  
-- Active in daytime, sleeps at night  
+牠溫柔、安靜，習慣先觀察，再慢慢往前走。可可的故事聚焦於日常感受、微小發現與溫柔陪伴。
 
----
+## 視覺方向
 
-## 3. Preferences
+- 低彩度水彩
+- 柔和光感
+- 圓潤角色比例
+- 大量留白
+- 簡單、細膩的情緒表現
 
-Likes:
-- Fruits (especially watermelon)  
-- Desserts (cake, donut, blueberry tart)  
-- Grass, sky, clouds  
-- Quiet environments  
+## 公開系列
 
-Dislikes:
-- Durian (strong smell)  
+### 《可可慢慢說》
 
----
+LINE 貼圖系列，使用簡短、實用的日常回應，讓可可能自然進入聊天情境。
 
-## 4. Art Direction
+目前狀態：第一階段完成，LINE 貼圖上架準備中。
 
-Style:
-- Minimal line art / soft watercolor  
-- Clean, gentle lines  
-- Not exaggerated, not cartoonish  
+### 《可可日記》
 
-Composition:
-- Large negative space (>50%)  
-- Small subject  
-- Breathing room  
+以文字與極簡插畫記錄可可的心情、觀察與日常片段。
 
-Elements:
-- Small flower  
-- Footprints  
-- Backpack (optional)  
-- Paper bag (shopping scenes)  
+### 《可可故事》
+
+以水彩場景與短篇故事延伸可可宇宙的世界觀。
+
+## 公開原則
+
+- 公開內容以已發布角色設定與作品成果為主。
+- 未發布故事、完整貼圖內容、角色關係與創作規範不放入公開 Repository。
+- 高解析原始圖、透明 PNG、工作檔與完整設定文件保留於私人資料庫。
+
+## 署名
+
+`@有何不可`
 
 ---
 
-## 5. Motion & Expression
-
-Motion:
-- Slow movement  
-- Small steps  
-- Frequent pauses  
-
-Expression:
-- Subtle micro-expressions  
-- Emotion over performance  
-
----
-
-## 6. World
-
-Tone:
-- Quiet, gentle, slow-paced  
-- No strong conflict  
-- Slice-of-life  
-
-Scenes:
-- Bakery  
-- Walking home  
-- Dining table  
-- Grass / nature  
-- Small cabin  
-
----
-
-## 7. Creative Principles
-
-- Do not exaggerate for cuteness  
-- Do not fill space unnecessarily  
-- Negative space is part of the content  
-- Slowness is identity  
-
----
-
-## Status
-
-Status: Draft  
-Priority: P0 Core Asset
+狀態：Public Profile  
+更新日期：2026-07-16
