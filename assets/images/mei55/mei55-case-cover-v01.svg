@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">玫的55廚房餐飲品牌整合案例封面</title>
+  <desc id="desc">以品牌薄荷綠、米白與粉色呈現一頁式品牌網頁、LINE官方帳號與社群內容整合。</desc>
+  <defs>
+    <filter id="paper" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="7" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0" result="mono"/>
+      <feComponentTransfer in="mono" result="fade"><feFuncA type="table" tableValues="0 0.07"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="fade" mode="multiply"/>
+    </filter>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2c9b8"/>
+      <stop offset="0.52" stop-color="#c98569"/>
+      <stop offset="1" stop-color="#704131"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#3b241c" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1200" fill="#f7efe6" filter="url(#paper)"/>
+  <path d="M0 0h1200v170c-150 52-254-36-401 9-178 54-289-55-456-7C208 211 101 206 0 170Z" fill="#e7a0af" opacity="0.72"/>
+  <path d="M0 1095c181-62 285 48 452-11 150-53 275 35 432-4 137-34 221 9 316 43v77H0Z" fill="#93bdb4" opacity="0.62"/>
+
+  <g transform="translate(72 58)">
+    <rect width="410" height="92" rx="46" fill="#fbf7f0" stroke="#6f9e95" stroke-width="5"/>
+    <circle cx="55" cy="46" r="28" fill="none" stroke="#6f9e95" stroke-width="5"/>
+    <path d="M55 22c17 5 26 20 20 34-6 15-24 22-39 15-15-8-20-27-11-41 8-13 25-17 38-9-15 1-24 12-21 24 3 11 17 16 27 10 10-6 11-20 3-28" fill="none" stroke="#6f9e95" stroke-width="4" stroke-linecap="round"/>
+    <text x="105" y="59" font-family="Noto Sans TC, PingFang TC, Microsoft JhengHei, sans-serif" font-size="41" font-weight="700" fill="#416f67">玫的55廚房</text>
+  </g>
+
+  <text x="72" y="255" font-family="Noto Sans TC, PingFang TC, Microsoft JhengHei, sans-serif" font-size="30" font-weight="700" letter-spacing="5" fill="#7e5c50">CASE STUDY 003</text>
+  <text x="72" y="345" font-family="Noto Sans TC, PingFang TC, Microsoft JhengHei, sans-serif" font-size="74" font-weight="800" fill="#3e302b">餐飲品牌整合</text>
+  <text x="72" y="415" font-family="Noto Sans TC, PingFang TC, Microsoft JhengHei, sans-serif" font-size="36" font-weight="600" fill="#7e5c50">從零散素材到可實際營運的數位門面</text>
+
+  <g transform="translate(72 485)" filter="url(#shadow)">
+    <rect width="1056" height="450" rx="34" fill="#fffaf5" stroke="#dbcfc5" stroke-width="4"/>
+    <rect width="1056" height="62" rx="34" fill="#f0ece7"/>
+    <rect y="30" width="1056" height="32" fill="#f0ece7"/>
+    <circle cx="35" cy="31" r="8" fill="#d1909e"/><circle cx="62" cy="31" r="8" fill="#d7b36b"/><circle cx="89" cy="31" r="8" fill="#7ea99f"/>
+    <text x="900" y="39" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#6c625d">55 KITCHEN</text>
+
+    <g transform="translate(24 86)">
+      <rect width="650" height="332" rx="22" fill="url(#hero)"/>
+      <circle cx="120" cy="105" r="76" fill="#f4dfbd" opacity="0.9"/>
+      <circle cx="200" cy="130" r="58" fill="#8d4c38" opacity="0.85"/>
+      <circle cx="292" cy="90" r="66" fill="#d98f58" opacity="0.9"/>
+      <circle cx="390" cy="138" r="86" fill="#734535" opacity="0.92"/>
+      <circle cx="500" cy="92" r="72" fill="#a86642" opacity="0.9"/>
+      <path d="M0 220c86-36 145 25 226-9 88-37 161 28 249-9 70-29 116-8 175 15v115H0Z" fill="#3d6e56" opacity="0.8"/>
+      <text x="42" y="245" font-family="Noto Sans TC, PingFang TC, Microsoft JhengHei, sans-serif" font-size="50" font-weight="800" fill="#fff">家的味道不會退流行</text>
+      <text x="44" y="288" font-family="Noto Sans TC, PingFang TC, Microsoft JhengHei, sans-serif" font-size="23" fill="#fff7f1">親手製作的家常滷味與料理包</text>
+      <rect x="44" y="306" width="150" height="42" rx="21" fill="#fff" opacity="0.94"/>
+      <text x="79" y="334" font-family="Noto Sans TC, PingFang TC, Microsoft JhengHei, sans-serif" font-size="18" font-weight="700" fill="#4c6f68">查看價目表</text>
+    </g>
+
+    <g transform="translate(704 86)">
+      <rect width="328" height="98" rx="20" fill="#f7dedf"/>
+      <text x="24" y="39" font-family="Noto Sans TC, PingFang TC, Microsoft JhengHei, sans-serif" font-size="21" font-weight="800" fill="#8b4857">一頁式品牌網頁</text>
+      <text x="24" y="70" font-family="Noto Sans TC, PingFang TC, Microsoft JhengHei, sans-serif" font-size="16" fill="#765f5f">品牌、菜單與訂購入口整合</text>
+      <rect y="117" width="328" height="98" rx="20" fill="#dcebe7"/>
+      <text x="24" y="156" font-family="Noto Sans TC, PingFang TC, Microsoft JhengHei, sans-serif" font-size="21" font-weight="800" fill="#416f67">LINE 官方帳號</text>
+      <text x="24" y="187" font-family="Noto Sans TC, PingFang TC, Microsoft JhengHei, sans-serif" font-size="16" fill="#5b716c">圖文選單、FAQ 與導購流程</text>
+      <rect y="234" width="328" height="98" rx="20" fill="#f3e6cd"/>
+      <text x="24" y="273" font-family="Noto Sans TC, PingFang TC, Microsoft JhengHei, sans-serif" font-size="21" font-weight="800" fill="#73573d">角色 IP・社群內容</text>
+      <text x="24" y="304" font-family="Noto Sans TC, PingFang TC, Microsoft JhengHei, sans-serif" font-size="16" fill="#766a5c">商品圖卡與品牌溝通素材</text>
+    </g>
+  </g>
+
+  <g transform="translate(72 1002)">
+    <rect width="1056" height="86" rx="28" fill="#fffaf5" opacity="0.94"/>
+    <text x="34" y="55" font-family="Noto Sans TC, PingFang TC, Microsoft JhengHei, sans-serif" font-size="25" font-weight="700" fill="#4e3d36">品牌資訊整理 ・ 網站建置 ・ 商品菜單 ・ LINE OA ・ 社群視覺</text>
+  </g>
+</svg>
