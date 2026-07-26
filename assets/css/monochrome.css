@@ -1,148 +1,26 @@
 :root {
-  --bg: #ffffff;
-  --surface: #ffffff;
-  --surface-2: #f1f1f1;
-  --text: #111111;
-  --muted: #666666;
-  --line: #d8d8d8;
-  --accent: #666666;
-  --accent-dark: #111111;
-  --shadow: 0 16px 44px rgba(0, 0, 0, 0.07);
+  --bg:#fff; --surface:#fff; --surface-2:#f6f6f4; --text:#111; --muted:#686868;
+  --line:#dededb; --accent:#545454; --accent-dark:#111; --shadow:none;
 }
-
-body {
-  background: var(--bg);
-  color: var(--text);
-}
-
-.site-header {
-  background: rgba(255, 255, 255, 0.96);
-}
-
-.brand-mark {
-  color: #ffffff;
-  background: #111111;
-}
-
-.hero-card {
-  background: linear-gradient(160deg, #ffffff, #eeeeee);
-}
-
-.button {
-  color: #ffffff;
-  background: #111111;
-  border-color: #111111;
-}
-
-.button.ghost,
-.button--secondary {
-  color: #111111;
-  background: #ffffff;
-  border-color: #111111;
-}
-
-.card,
-.hero-copy,
-.hero-card,
-.portfolio-preview__card,
-.work-card,
-.case-cover {
-  background: #ffffff;
-}
-
-.muted-panel,
-.contact-panel,
-.contact-box {
-  background: #f1f1f1;
-}
-
-.work-card__media {
-  background: linear-gradient(145deg, #f6f6f6, #e8e8e8);
-}
-
-.sticker-sprite {
-  background-image: url('../images/coco-stickers/coco-stickers-preview-v02.webp?v=20260716-3');
-}
-
-::selection {
-  color: #ffffff;
-  background: #111111;
-}
-
-@media (max-width: 1100px) {
-  .site-header {
-    position: relative;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .site-header > .site-nav {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .site-header__inner {
-    width: 100%;
-  }
-
-  .site-header__inner .menu-button {
-    display: inline-flex;
-  }
-
-  .site-header__inner .site-nav[data-navigation] {
-    display: none;
-    position: absolute;
-    inset: 72px 20px auto;
-    z-index: 20;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 12px;
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    background: #ffffff;
-    box-shadow: var(--shadow);
-  }
-
-  .site-header__inner .site-nav[data-navigation].is-open {
-    display: flex;
-  }
-
-  .site-header__inner .site-nav[data-navigation] a {
-    padding: 12px;
-  }
-
-  .hero,
-  .grid-two,
-  .card-grid,
-  .portfolio-preview,
-  .works-grid,
-  .services-grid,
-  .split,
-  .case-section__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    min-height: auto;
-  }
-
-  .portfolio-preview__heading .button,
-  .hero-actions .button,
-  .cta-actions .button {
-    width: 100%;
-  }
-
-  .sticker-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .process-item {
-    grid-template-columns: 44px 1fr;
-    gap: 12px;
-  }
-
-  .process-item p {
-    grid-column: 2;
-  }
+body { background:var(--bg); color:var(--text); }
+.site-header { background:rgba(255,255,255,.94); }
+.brand-mark { color:#fff; background:#111; }
+.button { color:#fff; background:#111; border-color:#111; }
+.button.ghost,.button--secondary { color:#111; background:#fff; border-color:#111; }
+.card,.hero-copy,.hero-card,.portfolio-preview__card,.work-card,.case-cover { background:transparent; box-shadow:none; }
+.muted-panel,.contact-panel,.contact-box { background:transparent; }
+.work-card__media { background:#f6f6f4; }
+.sticker-sprite { background-image:url('../images/coco-stickers/coco-stickers-preview-v02.webp?v=20260716-3'); }
+::selection { color:#fff; background:#111; }
+@media (max-width:760px) {
+  .site-header__inner .menu-button { display:inline-flex; }
+  .site-header__inner .site-nav[data-navigation] { display:none; position:absolute; inset:72px 20px auto; z-index:20; flex-direction:column; align-items:stretch; gap:0; padding:8px; border:1px solid var(--line); border-radius:6px; background:#fff; box-shadow:none; }
+  .site-header__inner .site-nav[data-navigation].is-open { display:flex; }
+  .site-header__inner .site-nav[data-navigation] a { padding:10px; }
+  .hero,.grid-two,.card-grid,.portfolio-preview,.works-grid,.services-grid,.split,.case-section__grid { grid-template-columns:1fr; }
+  .hero { min-height:auto; }
+  .portfolio-preview__heading .button,.hero-actions .button,.cta-actions .button { width:100%; }
+  .sticker-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .process-item { grid-template-columns:44px 1fr; gap:12px; }
+  .process-item p { grid-column:2; }
 }
