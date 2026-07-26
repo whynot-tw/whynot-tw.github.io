@@ -79,7 +79,7 @@ img { display: block; max-width: 100%; }
   width: min(var(--max), calc(100% - (var(--gutter) * 2)));
   margin: 0 auto;
   padding: clamp(72px, 9vw, 120px) 0;
-  border-top: 1px solid var(--line);
+  border-top: 0;
 }
 main > .section:first-child { border-top: 0; }
 
@@ -178,7 +178,12 @@ h3 { margin-bottom: 10px; font-size: 1.12rem; font-weight: 650; }
 .card { padding: 28px 32px 28px 0; border-bottom: 1px solid var(--line); }
 .card:nth-child(even) { padding-left: 32px; border-left: 1px solid var(--line); }
 .card p, .contact-panel p, .hero-card p { color: var(--muted); }
-.muted-panel, .contact-panel { padding: 0; background: transparent; }
+.muted-panel { padding: 0; background: transparent; }
+.contact-panel {
+  padding-top: clamp(72px, 9vw, 120px);
+  padding-bottom: clamp(72px, 9vw, 120px);
+  background: transparent;
+}
 
 .site-footer {
   width: min(var(--max), calc(100% - (var(--gutter) * 2)));
@@ -197,6 +202,7 @@ h3 { margin-bottom: 10px; font-size: 1.12rem; font-weight: 650; }
   .hero { gap: 36px; padding-top: 56px; padding-bottom: 56px; }
   .hero-card > p:first-child { margin: 12px 0 24px; }
   .section { padding: 56px 0; }
+  .contact-panel { padding-top: 56px; padding-bottom: 56px; }
   .card, .card:nth-child(even) { padding: 24px 0; border-left: 0; }
   .hero .hero-actions .button { width: auto; }
 }
