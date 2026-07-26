@@ -98,7 +98,7 @@ h3 { margin-bottom: 10px; font-size: 1.12rem; font-weight: 650; }
 .hero-card h2 { font-size: clamp(1.25rem, 2vw, 1.7rem); }
 .hero-card p { color: var(--muted); }
 
-.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-top: 30px; }
 .button {
   display: inline-flex;
   align-items: center;
@@ -116,6 +116,40 @@ h3 { margin-bottom: 10px; font-size: 1.12rem; font-weight: 650; }
 .button:hover { background: var(--accent); border-color: var(--accent); }
 .button.ghost { color: var(--text); background: transparent; }
 .button.ghost:hover { color: #fff; background: var(--text); }
+
+.hero .hero-actions .button {
+  position: relative;
+  justify-content: flex-start;
+  min-height: 36px;
+  padding: 3px 0 5px;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--text);
+  border-radius: 0;
+  font-size: .95rem;
+  font-weight: 650;
+  line-height: 1.5;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+.hero .hero-actions .button:first-child::after {
+  content: "→";
+  margin-left: 8px;
+  font-weight: 400;
+  transition: transform 160ms ease;
+}
+.hero .hero-actions .button:first-child:hover::after { transform: translateX(3px); }
+.hero .hero-actions .button.ghost {
+  color: var(--muted);
+  border-bottom-color: var(--line);
+  font-weight: 500;
+}
+.hero .hero-actions .button:hover,
+.hero .hero-actions .button.ghost:hover {
+  color: var(--text);
+  background: transparent;
+  border-color: var(--text);
+}
 
 .grid-two { display: grid; grid-template-columns: minmax(220px, .72fr) minmax(0, 1.28fr); gap: clamp(48px, 10vw, 144px); }
 .content-block { max-width: 700px; color: var(--muted); font-size: 1rem; }
@@ -149,5 +183,5 @@ h3 { margin-bottom: 10px; font-size: 1.12rem; font-weight: 650; }
   .hero { gap: 56px; }
   .section { padding: 72px 0; }
   .card, .card:nth-child(even) { padding: 24px 0; border-left: 0; }
-  .hero-actions .button { width: 100%; }
+  .hero .hero-actions .button { width: auto; }
 }
