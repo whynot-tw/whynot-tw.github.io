@@ -64,3 +64,11 @@
   .contact-actions .button { width: auto; }
   .contact-qr { display: none; }
 }
+.contact-actions .editorial-link {
+  padding-bottom: 3px;
+  border-bottom: 0;
+}
+.contact-actions .editorial-link:hover {
+  color: var(--muted);
+  border-bottom: 0;
+}
