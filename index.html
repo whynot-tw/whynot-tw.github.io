@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="有何不可設計｜平面設計、包裝設計、品牌視覺與書籍排版。" />
   <title>有何不可設計｜平面設計・包裝設計・品牌視覺</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=20260727-5" />
-  <link rel="stylesheet" href="assets/css/homepage-mvp.css?v=20260727-5" />
-  <link rel="stylesheet" href="assets/css/monochrome.css?v=20260727-5" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260727-6" />
+  <link rel="stylesheet" href="assets/css/homepage-mvp.css?v=20260727-6" />
+  <link rel="stylesheet" href="assets/css/monochrome.css?v=20260727-6" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9361Y73Y7F"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -22,7 +22,8 @@
       <span class="brand-mark">有</span>
       <span><strong>有何不可設計</strong><small>Why Not Studio</small></span>
     </a>
-    <nav class="site-nav" aria-label="主選單">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">開啟選單</button>
+    <nav class="site-nav" id="site-nav" aria-label="主選單">
       <a href="about/">關於</a>
       <a href="services/">服務</a>
       <a href="works/">作品</a>
@@ -41,7 +42,6 @@
     <section class="section portfolio-preview" aria-labelledby="featured-title">
       <div class="portfolio-preview__heading">
         <h2 id="featured-title">精選作品</h2>
-        <p>六個最能代表目前專業方向的案例。</p>
         <a class="editorial-link" href="works/">查看全部作品 →</a>
       </div>
       <div class="portfolio-preview__list">
@@ -51,46 +51,38 @@
           </a>
           <div class="portfolio-preview__body"><h3>魯凱族文化手冊</h3><p class="portfolio-meta">書刊排版／資訊整理</p></div>
         </article>
-
         <article class="portfolio-preview__card">
           <a class="portfolio-preview__image" href="works/mei55/" aria-label="查看55廚房案例">
             <img src="assets/images/mei55/mei55-case-cover-v01.svg?v=20260716-2" alt="55廚房" width="1200" height="1200" />
           </a>
           <div class="portfolio-preview__body"><h3>55廚房</h3><p class="portfolio-meta">品牌資訊整理／LINE OA</p></div>
         </article>
-
         <article class="portfolio-preview__card">
           <a class="portfolio-preview__image" href="works/tanji/" aria-label="查看炭吉案例">
             <img src="assets/images/tanji/tanji-case-cover-v01.svg?v=20260716-1" alt="炭吉" width="1200" height="1200" />
           </a>
           <div class="portfolio-preview__body"><h3>炭吉</h3><p class="portfolio-meta">品牌視覺／印刷應用</p></div>
         </article>
-
         <article class="portfolio-preview__card">
-          <div class="portfolio-preview__image placeholder"><span class="placeholder__label">建置中</span><small>Case Study Coming Soon</small></div>
+          <div class="portfolio-preview__image placeholder"><span class="placeholder__label">建置中</span><small>案例內容整理中</small></div>
           <div class="portfolio-preview__body"><h3>雪妍</h3><p class="portfolio-meta">保健產品包裝／印刷完稿</p></div>
         </article>
-
         <article class="portfolio-preview__card">
-          <div class="portfolio-preview__image placeholder"><span class="placeholder__label">建置中</span><small>Brand Case Coming Soon</small></div>
+          <div class="portfolio-preview__image placeholder"><span class="placeholder__label">建置中</span><small>品牌案例整理中</small></div>
           <div class="portfolio-preview__body"><h3>平衡軸療法｜品牌</h3><p class="portfolio-meta">品牌識別／視覺系統</p></div>
         </article>
-
         <article class="portfolio-preview__card">
-          <div class="portfolio-preview__image placeholder"><span class="placeholder__label">建置中</span><small>Editorial Case Coming Soon</small></div>
+          <div class="portfolio-preview__image placeholder"><span class="placeholder__label">建置中</span><small>書籍案例整理中</small></div>
           <div class="portfolio-preview__body"><h3>平衡軸療法｜書籍</h3><p class="portfolio-meta">書籍設計／編排系統</p></div>
         </article>
       </div>
     </section>
 
     <section class="section portfolio-preview" aria-labelledby="latest-title">
-      <div class="portfolio-preview__heading">
-        <h2 id="latest-title">最新作品</h2>
-        <p>依完成度與可公開狀態更新。</p>
-      </div>
+      <div class="portfolio-preview__heading"><h2 id="latest-title">最新作品</h2></div>
       <div class="portfolio-preview__list portfolio-preview__list--three">
         <article class="portfolio-preview__card">
-          <div class="portfolio-preview__image placeholder"><span class="placeholder__label">建置中</span><small>Portfolio Coming Soon</small></div>
+          <div class="portfolio-preview__image placeholder"><span class="placeholder__label">建置中</span><small>作品內容整理中</small></div>
           <div class="portfolio-preview__body"><h3>布有趣</h3><p class="portfolio-meta">手作品牌／課程與作品</p></div>
         </article>
         <article class="portfolio-preview__card">
@@ -100,7 +92,7 @@
           <div class="portfolio-preview__body"><h3>可可慢慢說</h3><p class="portfolio-meta">角色 IP／LINE 貼圖</p></div>
         </article>
         <article class="portfolio-preview__card">
-          <div class="portfolio-preview__image placeholder"><span class="placeholder__label">建置中</span><small>Case Study Coming Soon</small></div>
+          <div class="portfolio-preview__image placeholder"><span class="placeholder__label">建置中</span><small>案例內容整理中</small></div>
           <div class="portfolio-preview__body"><h3>LINE 官方帳號導購流程規劃</h3><p class="portfolio-meta">LINE OA／導購流程</p></div>
         </article>
       </div>
@@ -128,14 +120,22 @@
 
   <footer class="site-footer">
     <nav class="footer-links" aria-label="頁尾連結">
-      <a href="faq/">FAQ</a>
-      <a href="mailto:whynot.studio.tw@gmail.com">Email</a>
-      <a href="https://www.instagram.com/whynot_studio_tw/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://line.me/R/ti/p/%40140rcuat" target="_blank" rel="noopener">LINE 官方帳號：@140rcuat</a>
+      <a href="faq/"><span class="footer-icon">?</span><span>FAQ</span></a>
+      <a href="mailto:whynot.studio.tw@gmail.com"><span class="footer-icon">✉</span><span>Email</span></a>
+      <a href="https://www.instagram.com/whynot_studio_tw/" target="_blank" rel="noopener"><span class="footer-icon">◎</span><span>Instagram</span></a>
+      <a href="https://line.me/R/ti/p/%40140rcuat" target="_blank" rel="noopener"><span class="footer-icon">＋</span><span>LINE 官方帳號：@140rcuat</span></a>
     </nav>
     <p>© <span id="year"></span> 有何不可設計</p>
   </footer>
 
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('#site-nav');
+    menuButton?.addEventListener('click', () => {
+      const open = menu.classList.toggle('is-open');
+      menuButton.setAttribute('aria-expanded', String(open));
+    });
+  </script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
