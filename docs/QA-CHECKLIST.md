@@ -143,6 +143,24 @@
 - [ ] 留白正常
 - [ ] 作品卡三欄
 
+## SEO／AIO／GEO
+
+- [ ] 每頁有唯一且正確的 title
+- [ ] 每頁有具體 meta description
+- [ ] 每頁 canonical URL 正確
+- [ ] 核心頁 Open Graph title／description／url／image 正確
+- [ ] 首頁 Organization／ProfessionalService JSON-LD 可解析
+- [ ] 品牌名稱、網址、Email、Instagram、LINE 全站一致
+- [ ] sitemap.xml 收錄所有正式公開頁
+- [ ] robots.txt 指向正式 sitemap.xml
+- [ ] 正式案例頁網址穩定
+- [ ] 重要內容可在 HTML 文字中讀取
+- [ ] 圖片 alt 具體且符合實際內容
+- [ ] 服務頁明確說明適合對象、問題、交付與限制
+- [ ] 案例頁具備背景、問題、方法、成果與證據
+- [ ] 未完成 FAQ 不加入 FAQPage 假資料
+- [ ] 不堆疊關鍵字或編造無法驗證的成果
+
 ## Links／Technical
 
 - [ ] 所有內部連結正確
@@ -157,7 +175,7 @@
 
 只有以上項目全部確認後，才能：
 
-1. 建立 PR
+1. 將 Draft PR 標記為 Ready for review
 2. 檢查 diff
 3. 合併至 main
 4. 驗證 GitHub Pages 正式站
