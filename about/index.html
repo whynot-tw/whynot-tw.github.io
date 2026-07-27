@@ -5,23 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="關於有何不可設計｜先建立架構，再開始設計。" />
   <title>關於｜有何不可設計</title>
-  <link rel="stylesheet" href="../assets/css/style.css?v=20260727-6" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/brand/favicon-32.png" />
+  <link rel="apple-touch-icon" href="../assets/brand/apple-touch-icon.png" />
+  <link rel="stylesheet" href="../assets/css/v4.css?v=20260727-2" />
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="../"><span class="brand-mark">有</span><span><strong>有何不可設計</strong><small>Why Not Studio</small></span></a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">開啟選單</button>
+    <a class="brand" href="../" aria-label="回到首頁"><img src="../assets/brand/logo-horizontal.png" alt="有何不可設計" /></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">選單</button>
     <nav class="site-nav" id="site-nav" aria-label="主選單"><a href="./" aria-current="page">關於</a><a href="../services/">服務</a><a href="../works/">作品</a><a href="../contact/">聯絡</a></nav>
   </header>
-  <main class="page-shell">
-    <section class="section page-intro"><h1>關於有何不可設計</h1><p class="lead">先建立架構，再開始設計。從資訊整理、內容層級到視覺落地，讓設計成果清楚、可使用，也能持續延伸。</p></section>
-    <section class="section"><div class="stack-list">
-      <article class="stack-item"><h2>先建立架構，再開始設計</h2><p>先確認資料、流程與頁面目的，再進入內容整理與視覺設計。</p></article>
-      <article class="stack-item"><h2>品牌識別系統</h2><div class="placeholder"><span class="placeholder__label">建置中</span><small>品牌識別圖整理中</small></div></article>
-      <article class="stack-item"><h2>經歷與專業背景</h2><p>10 年以上平面與包裝設計經驗，結合資訊系統背景、書刊排版、印刷完稿與 AI 協作。</p></article>
-    </div></section>
+
+  <main>
+    <section class="section page-intro">
+      <p class="eyebrow">About</p>
+      <h1>關於有何不可設計</h1>
+      <p class="lead">從資訊整理、內容層級到視覺落地，先把問題與架構釐清，再把內容做成清楚、可使用，也能持續延伸的設計。</p>
+    </section>
+
+    <section class="section split-section">
+      <div><h2>先建立架構，再開始設計</h2></div>
+      <div class="prose"><p>設計不只是在畫面上增加元素。開始製作前，先確認資料是否完整、內容如何分類、使用者要完成什麼，以及後續如何維護。</p><p>這套工作方式適用於網站、包裝、書刊、品牌視覺、LINE 官方帳號與其他資訊量較高的專案。</p></div>
+    </section>
+
+    <section class="section split-section">
+      <div><h2>品牌識別系統</h2><p>正式品牌資產統一由同一套來源管理，不另外改造 Logo 或自行發明版本。</p></div>
+      <figure class="brand-board"><img src="../assets/brand/brand-board.webp" alt="有何不可設計品牌識別系統" loading="lazy" /></figure>
+    </section>
+
+    <section class="section split-section">
+      <div><h2>經歷與專業背景</h2></div>
+      <div class="prose"><p>10 年以上平面與包裝設計經驗，工作範圍包含書刊排版、印刷完稿、品牌視覺、社群內容與資訊整理。</p><p>結合資訊系統背景與 AI 協作，將零散資料、流程與設計需求整理成可持續運作的系統。</p></div>
+    </section>
   </main>
-  <footer class="site-footer"><nav class="footer-links"><a href="../faq/"><span class="footer-icon">?</span><span>FAQ</span></a><a href="mailto:whynot.studio.tw@gmail.com"><span class="footer-icon">✉</span><span>Email</span></a><a href="https://www.instagram.com/whynot_studio_tw/" target="_blank" rel="noopener"><span class="footer-icon">◎</span><span>Instagram</span></a><a href="https://line.me/R/ti/p/%40140rcuat" target="_blank" rel="noopener"><span class="footer-icon">＋</span><span>LINE 官方帳號：@140rcuat</span></a></nav><p>© 2026 有何不可設計</p></footer>
-  <script>const menuButton=document.querySelector('.menu-toggle');const menu=document.querySelector('#site-nav');menuButton?.addEventListener('click',()=>{const open=menu.classList.toggle('is-open');menuButton.setAttribute('aria-expanded',String(open));});</script>
+
+  <footer class="site-footer">
+    <nav class="footer-links" aria-label="頁尾連結"><a href="../faq/">FAQ</a><a href="mailto:whynot.studio.tw@gmail.com">Email</a><a href="https://www.instagram.com/whynot_studio_tw/" target="_blank" rel="noopener">Instagram</a><a href="https://line.me/R/ti/p/%40140rcuat" target="_blank" rel="noopener">LINE 官方帳號：@140rcuat</a></nav>
+    <p>© <span data-year></span> 有何不可設計</p>
+  </footer>
+  <script src="../assets/js/v4.js"></script>
 </body>
 </html>
