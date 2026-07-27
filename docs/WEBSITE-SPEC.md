@@ -153,6 +153,43 @@ FAQ 暫時只放 Footer，不放主導覽。
 - 卡片標題不得被圖片或 Placeholder 遮蓋。
 - QR Code 不得超出容器。
 
+## SEO／AIO／GEO
+
+本網站不把 AIO／GEO 視為後加功能，而是與 SEO 共用同一套可理解、可索引、可引用的內容地基。
+
+### 技術規格
+
+- 全站每頁具唯一 `title` 與 `meta description`。
+- 全站每頁設定 canonical URL。
+- 核心頁與正式案例頁設定 Open Graph 基本欄位。
+- 首頁加入 `Organization`／`ProfessionalService` JSON-LD。
+- 案例頁依內容成熟度加入 `CreativeWork` 或適合的結構化資料。
+- FAQ 正式內容完成後，才加入 `FAQPage` JSON-LD；不得為空白 FAQ 建立假資料。
+- 保留 `robots.txt` 與 `sitemap.xml`。
+- 重要內容必須存在於 HTML 文字，不得只放在圖片內。
+- 圖片需有具體、可理解的 `alt`。
+- 網址需穩定，避免無必要改動案例 slug。
+
+### 品牌實體一致性
+
+以下資料須全站一致：
+
+- 品牌名稱：有何不可設計
+- 官方網站：https://whynot-tw.github.io/
+- Email：whynot.studio.tw@gmail.com
+- Instagram：@whynot_studio_tw
+- LINE 官方帳號：@140rcuat
+- 正式 Logo 與品牌素材路徑
+- 專業領域：平面設計、包裝設計、品牌視覺、書刊與手冊排版、LINE 官方帳號規劃、AI 協作
+
+### 內容規格
+
+- 服務頁要清楚回答：適合誰、解決什麼問題、交付什麼、需要準備什麼、限制與合作方式。
+- 案例頁要具體回答：專案背景、問題、設計判斷、執行方法、成果與可驗證證據。
+- 內容以具體事實、方法與成果為主，不堆疊空泛關鍵字。
+- 同一服務與案例名稱在首頁、作品頁、服務頁與 Schema 中需一致。
+- 不宣稱無法驗證的成果，不為 AIO／GEO 編造數據或客戶成效。
+
 ## 暫不實作
 
 - Google Form
