@@ -101,6 +101,10 @@ h3 { margin-bottom: 8px; font-size: 1.08rem; font-weight: 650; }
   gap: clamp(28px, 4vw, 48px) clamp(20px, 3vw, 36px);
 }
 .work-card { min-width: 0; }
+.work-card__link {
+  display: block;
+  height: 100%;
+}
 .work-card__media {
   display: grid;
   place-items: center;
@@ -108,10 +112,25 @@ h3 { margin-bottom: 8px; font-size: 1.08rem; font-weight: 650; }
   overflow: hidden;
   background: var(--site-surface);
 }
-.work-card__media img { width: 100%; height: 100%; object-fit: cover; }
+.work-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
 .work-card__media--contain img { object-fit: contain; padding: 8%; }
 .work-card__body { padding-top: 16px; }
 .work-card__body h3 { margin-bottom: 4px; }
+.work-card__title {
+  display: inline;
+  border-bottom: 1px solid transparent;
+  transition: border-color 160ms ease;
+}
+.work-card__link:hover .work-card__title,
+.work-card__link:focus-visible .work-card__title { border-color: var(--site-text); }
+.work-card__link:hover .work-card__media img,
+.work-card__link:focus-visible .work-card__media img { transform: scale(1.01); opacity: .94; }
+.work-card__link:focus-visible { outline-offset: 6px; }
 .work-card__meta { margin-bottom: 0; color: var(--site-muted); font-size: .86rem; }
 .work-card__placeholder {
   display: grid;
