@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">55廚房 LINE OA 導購流程</title>
+  <desc id="desc">顧客加入 LINE OA，經由圖文選單、FAQ 與訂購流程，完成商品選擇、資訊確認、付款、製作與出貨。</desc>
+  <rect width="1600" height="900" fill="#f4f1ea"/>
+  <g font-family="Arial, 'Noto Sans TC', sans-serif" fill="#171717">
+    <text x="120" y="120" font-size="58" font-weight="700">55廚房 LINE OA 導購流程</text>
+    <text x="120" y="172" font-size="26">將分散資訊整理成顧客能理解、能查詢、能完成訂購的路徑</text>
+  </g>
+  <g font-family="Arial, 'Noto Sans TC', sans-serif" text-anchor="middle">
+    <g>
+      <rect x="120" y="270" width="230" height="116" rx="24" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+      <text x="235" y="320" font-size="28" font-weight="700">加入 LINE OA</text>
+      <text x="235" y="354" font-size="20">建立主要聯絡入口</text>
+    </g>
+    <path d="M350 328 H430" stroke="#171717" stroke-width="4" fill="none"/>
+    <path d="M418 315 L438 328 L418 341" fill="none" stroke="#171717" stroke-width="4"/>
+    <g>
+      <rect x="440" y="270" width="230" height="116" rx="24" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+      <text x="555" y="320" font-size="28" font-weight="700">圖文選單</text>
+      <text x="555" y="354" font-size="20">菜單｜商品｜訂購</text>
+    </g>
+    <path d="M670 328 H750" stroke="#171717" stroke-width="4" fill="none"/>
+    <path d="M738 315 L758 328 L738 341" fill="none" stroke="#171717" stroke-width="4"/>
+    <g>
+      <rect x="760" y="270" width="230" height="116" rx="24" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+      <text x="875" y="320" font-size="28" font-weight="700">FAQ</text>
+      <text x="875" y="354" font-size="20">付款｜運送｜保存</text>
+    </g>
+    <path d="M990 328 H1070" stroke="#171717" stroke-width="4" fill="none"/>
+    <path d="M1058 315 L1078 328 L1058 341" fill="none" stroke="#171717" stroke-width="4"/>
+    <g>
+      <rect x="1080" y="270" width="230" height="116" rx="24" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+      <text x="1195" y="320" font-size="28" font-weight="700">訂購流程</text>
+      <text x="1195" y="354" font-size="20">確認步驟與資訊</text>
+    </g>
+    <path d="M1310 328 H1390" stroke="#171717" stroke-width="4" fill="none"/>
+    <path d="M1378 315 L1398 328 L1378 341" fill="none" stroke="#171717" stroke-width="4"/>
+    <g>
+      <rect x="1400" y="270" width="120" height="116" rx="24" fill="#171717"/>
+      <text x="1460" y="320" font-size="25" font-weight="700" fill="#ffffff">完成</text>
+      <text x="1460" y="354" font-size="18" fill="#ffffff">下單</text>
+    </g>
+  </g>
+  <g font-family="Arial, 'Noto Sans TC', sans-serif">
+    <text x="120" y="520" font-size="30" font-weight="700" fill="#171717">顧客訂購路徑</text>
+    <g fill="#171717" font-size="24">
+      <text x="120" y="582">01　選擇商品</text>
+      <text x="380" y="582">02　確認資訊</text>
+      <text x="650" y="582">03　付款／匯款</text>
+      <text x="950" y="582">04　安排製作</text>
+      <text x="1215" y="582">05　出貨／面交</text>
+      <text x="120" y="644">06　完成訂購與等待出貨</text>
+    </g>
+    <rect x="120" y="710" width="1400" height="90" rx="18" fill="#ffffff" stroke="#171717" stroke-width="2"/>
+    <text x="820" y="765" font-size="28" text-anchor="middle" fill="#171717">顧客旅程：加入 LINE OA → 查詢資訊 → 理解訂購方式 → 填寫表單 → 完成訂購</text>
+  </g>
+</svg>
