@@ -15,10 +15,11 @@ The portfolio is presented as a gallery, not as a dense product catalogue.
 
 - White space is part of the brand language.
 - Reading rhythm and breathing room take priority over information density.
-- Do not reduce spacing merely because the screen appears empty.
 - Consistency matters more than compactness.
 - Homepage, Works, placeholders and published project cards must use the same spacing system.
-- Image-to-title spacing uses the more generous reference shown in the 2026-07-30 mobile review.
+- Image-to-title spacing uses an edited gallery rhythm: 20px on mobile and 30px on desktop.
+- Card-to-card spacing is 52px, remaining clearly larger than internal card spacing.
+- Do not reduce spacing only to make the page look denser; changes must be visually reviewed.
 
 ## Card principles
 

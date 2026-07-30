@@ -5,7 +5,7 @@ Updated: 2026-07-30
 
 ## Spacing scale
 
-Use a 4px base scale.
+Use a 4px base scale, with selected optical values when a component requires a better visual rhythm.
 
 ```text
 space.0  = 0
@@ -26,14 +26,14 @@ space.12 = 56px
 ## Work card rhythm
 
 ```text
-card.media-to-title.mobile  = space.9   # 36px
-card.media-to-title.desktop = space.10  # 40px
-card.title-to-category       = space.3   # 12px
-card.card-to-card.mobile     = space.12  # 56px minimum
+card.media-to-title.mobile  = 20px
+card.media-to-title.desktop = 30px
+card.title-to-category       = 12px
+card.card-to-card            = 52px
 ```
 
-The image-to-title value intentionally uses a generous gallery rhythm. Do not reduce it to create a denser list.
+The revised values keep the gallery rhythm while reducing excessive separation between media and title. Card-to-card spacing remains clearly larger than the card's internal spacing.
 
 ## Implementation rule
 
-CSS custom properties should be the single source of truth. Homepage, Works and placeholder cards must reference the same variables rather than duplicating numeric values.
+CSS custom properties are the single source of truth. Homepage, Works and placeholder cards must reference the same variables rather than duplicating numeric values.
