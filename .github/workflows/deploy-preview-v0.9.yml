@@ -1,0 +1,83 @@
+name: Deploy portfolio preview v0.9
+
+on:
+  push:
+    branches:
+      - source/portfolio-integrated-v0.9
+    paths:
+      - ".preview-source/**"
+      - ".github/workflows/deploy-preview-v0.9.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: portfolio-preview-v0.9
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout preview source branch
+        uses: actions/checkout@v4
+
+      - name: Reconstruct source package
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .preview-source/part-00.b64 \
+              .preview-source/part-01.b64 \
+              .preview-source/part-02.b64 > preview-source.tar.gz.b64
+          base64 --decode preview-source.tar.gz.b64 > preview-source.tar.gz
+          mkdir preview-source
+          tar -xzf preview-source.tar.gz -C preview-source
+          test -f preview-source/package.json
+          test -f preview-source/vite.config.ts
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Setup pnpm
+        shell: bash
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.4.1 --activate
+          pnpm --version
+
+      - name: Install, check, and build
+        working-directory: preview-source
+        shell: bash
+        run: |
+          set -euo pipefail
+          pnpm install --no-frozen-lockfile
+          pnpm run check
+          pnpm run build
+          test -f dist/index.html
+          test -d dist/assets
+          test -d dist/images
+
+      - name: Deploy only to preview subdirectory
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 --branch main \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" site
+          rm -rf site/preview-v0.9
+          mkdir -p site/preview-v0.9
+          cp -a preview-source/dist/. site/preview-v0.9/
+          touch site/.nojekyll
+          cd site
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview-v0.9 .nojekyll
+          if git diff --cached --quiet; then
+            echo "No preview changes to deploy."
+          else
+            git commit -m "部署作品集整合版預覽 v0.9"
+            git push origin main
+          fi
