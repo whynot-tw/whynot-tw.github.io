@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>有何不可設計｜WHYNOT STUDIO</title>
+    <!--
+      GitHub Pages User Pages 部署（whynot-tw.github.io，網址是網域根目錄）
+      找不到檔案時會顯示這個頁面。這段 script 把使用者原本要去的路徑編碼進查詢字串，
+      導回 index.html，再由 index.html 裡對應的 script 還原路徑，
+      讓 wouter 能接手渲染正確的頁面（例如 /works/case-01）。
+      參考做法：https://github.com/rafgraph/spa-github-pages
+
+      pathSegmentsToKeep = 0 是因為這是「User Pages」部署（網址不帶 repo 名稱這段路徑）。
+      如果之後改成一般 Project Pages（username.github.io/repo名稱/），要把這裡改成 1。
+    -->
+    <script>
+      var pathSegmentsToKeep = 1;
+      var l = window.location;
+      l.replace(
+        l.protocol +
+          "//" +
+          l.hostname +
+          (l.port ? ":" + l.port : "") +
+          l.pathname
+            .split("/")
+            .slice(0, 1 + pathSegmentsToKeep)
+            .join("/") +
+          "/?/" +
+          l.pathname
+            .slice(1)
+            .split("/")
+            .slice(pathSegmentsToKeep)
+            .join("/")
+            .replace(/&/g, "~and~") +
+          (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+          l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

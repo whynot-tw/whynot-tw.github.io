@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <rect width="800" height="600" fill="#F7F6F2"/>
+  <g stroke="#D9D8D2" stroke-width="2">
+    <rect x="40" y="40" width="220" height="220" fill="#EFEEE9"/>
+    <rect x="290" y="40" width="220" height="220" fill="#EFEEE9"/>
+    <rect x="540" y="40" width="220" height="220" fill="#EFEEE9"/>
+    <rect x="40" y="290" width="220" height="220" fill="#EFEEE9"/>
+    <rect x="290" y="290" width="220" height="220" fill="#1457D9"/>
+    <rect x="540" y="290" width="220" height="220" fill="#EFEEE9"/>
+  </g>
+  <text x="40" y="550" font-family="monospace" font-size="18" fill="#4D4C49">MATERIAL SAMPLES / PENDING</text>
+</svg>
