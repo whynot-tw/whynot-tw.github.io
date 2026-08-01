@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
-  <rect width="800" height="600" fill="#F7F6F2"/>
-  <rect x="40" y="40" width="720" height="520" fill="#EFEEE9"/>
-  <line x1="40" y1="300" x2="760" y2="300" stroke="#1457D9" stroke-width="2"/>
-  <circle cx="200" cy="300" r="6" fill="#1457D9"/>
-  <circle cx="600" cy="300" r="6" fill="#1457D9"/>
-  <rect x="500" y="120" width="180" height="120" fill="#D9D8D2"/>
-  <text x="60" y="90" font-family="monospace" font-size="18" fill="#4D4C49">MATERIAL / PENDING</text>
-</svg>
