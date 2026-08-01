@@ -1,0 +1,82 @@
+name: Promote integrated portfolio v0.9
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/promote-integrated-v0.9.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: promote-integrated-v0.9
+  cancel-in-progress: false
+
+jobs:
+  build-and-promote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Prepare production source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f preview-source/package.json
+          test -f preview-source/vite.config.ts
+          sed -i 's#const GITHUB_PAGES_BASE = "/preview-v0.9/";#const GITHUB_PAGES_BASE = "/";#' preview-source/vite.config.ts
+          grep -q 'const GITHUB_PAGES_BASE = "/";' preview-source/vite.config.ts
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Setup pnpm
+        shell: bash
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.4.1 --activate
+          pnpm --version
+
+      - name: Install, check, and build
+        working-directory: preview-source
+        shell: bash
+        run: |
+          set -euo pipefail
+          pnpm install --no-frozen-lockfile
+          pnpm run check
+          pnpm run build
+          test -f dist/index.html
+          test -f dist/404.html
+          test -d dist/assets
+          test -d dist/images
+          if grep -R '/preview-v0.9/' dist; then
+            echo 'Production build still contains preview base path.' >&2
+            exit 1
+          fi
+
+      - name: Replace old site with integrated build
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/whynot-production
+          cp -a preview-source/dist/. /tmp/whynot-production/
+
+          find . -mindepth 1 -maxdepth 1 \
+            ! -name '.git' \
+            ! -name '.github' \
+            -exec rm -rf {} +
+
+          cp -a /tmp/whynot-production/. .
+          touch .nojekyll
+          rm -f .github/workflows/promote-integrated-v0.9.yml
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m '正式上線作品集整合版 v0.9'
+          git push origin HEAD:main
