@@ -1,0 +1,24 @@
+{
+  "name": "有何不可設計 WHYNOT STUDIO",
+  "short_name": "WHYNOT STUDIO",
+  "icons": [
+    {
+      "src": "/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#F7F6F2",
+  "background_color": "#F7F6F2",
+  "display": "standalone"
+}
