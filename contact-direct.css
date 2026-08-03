@@ -1,0 +1,138 @@
+.contact-form-wrap[data-direct-contact="true"] > .contact-form-wrap__header,
+.contact-form-wrap[data-direct-contact="true"] > .contact-form {
+  display: none;
+}
+
+.direct-contact__header > p:not(.eyebrow) {
+  max-width: 610px;
+  color: var(--ink-soft);
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.direct-contact__header h2 {
+  letter-spacing: -0.06em;
+  margin-top: 15px;
+  font-size: clamp(29px, 3.25vw, 43px);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.direct-contact__record {
+  border-top: 1px solid var(--line-dark);
+  border-left: 1px solid var(--line-dark);
+  border-right: 1px solid var(--line-dark);
+  background: var(--blue-wash);
+  color: var(--proof-blue);
+  letter-spacing: 0.06em;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 28px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  display: grid;
+}
+
+.direct-contact__record span {
+  border-right: 1px solid color-mix(in srgb, var(--proof-blue) 34%, transparent);
+  border-bottom: 1px solid var(--line-dark);
+  padding: 9px 11px;
+}
+
+.direct-contact__record span:last-child {
+  border-right: 0;
+}
+
+.direct-contact__grid {
+  border-left: 1px solid var(--line-dark);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: grid;
+}
+
+.direct-contact__channel {
+  border-right: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+  background: var(--paper);
+  min-height: 310px;
+  padding: 25px 22px 21px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.direct-contact__channel--line {
+  background: var(--paper-deep);
+}
+
+.direct-contact__index {
+  color: var(--proof-blue);
+  letter-spacing: 0.075em;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.direct-contact__channel h3 {
+  letter-spacing: -0.045em;
+  margin-top: 21px;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.direct-contact__channel p {
+  max-width: 360px;
+  color: var(--ink-soft);
+  margin-top: 9px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.direct-contact__action {
+  width: 100%;
+  margin-top: auto;
+}
+
+.direct-contact__value {
+  max-width: 100%;
+  color: var(--ink-muted);
+  overflow-wrap: anywhere;
+  margin-top: 13px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+a.direct-contact__value:hover {
+  color: var(--proof-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.direct-contact__note {
+  border-left: 2px solid var(--proof-blue);
+  background: var(--blue-wash);
+  color: #33446a;
+  margin-top: 18px;
+  padding: 12px 14px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@media (max-width: 680px) {
+  .direct-contact__record {
+    grid-template-columns: 1fr;
+  }
+
+  .direct-contact__record span {
+    border-right: 0;
+  }
+
+  .direct-contact__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .direct-contact__channel {
+    min-height: 280px;
+  }
+}
