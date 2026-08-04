@@ -53,7 +53,7 @@
   border-right: 1px solid var(--line-dark);
   border-bottom: 1px solid var(--line-dark);
   background: var(--paper);
-  min-height: 310px;
+  min-height: 330px;
   padding: 25px 22px 21px;
   display: flex;
   flex-direction: column;
@@ -95,16 +95,44 @@
 
 .direct-contact__value {
   max-width: 100%;
-  color: var(--ink-muted);
+  color: var(--proof-blue);
   overflow-wrap: anywhere;
   margin-top: 13px;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
+  font-size: 11px;
+  font-weight: 600;
   line-height: 1.6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.direct-contact__value--line {
+  font-size: 14px;
 }
 
 a.direct-contact__value:hover {
+  color: var(--proof-blue-dark);
+}
+
+.direct-contact__copy {
+  border: 1px solid var(--line-dark);
+  background: transparent;
+  color: var(--ink-soft);
+  min-height: 36px;
+  margin-top: 10px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.direct-contact__copy:hover {
+  border-color: var(--proof-blue);
   color: var(--proof-blue);
+}
+
+.contact-aside__notice a {
+  color: var(--proof-blue);
+  font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -133,6 +161,6 @@ a.direct-contact__value:hover {
   }
 
   .direct-contact__channel {
-    min-height: 280px;
+    min-height: 300px;
   }
 }
