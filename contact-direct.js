@@ -1,7 +1,39 @@
 (() => {
   const EMAIL = "whynot.studio.tw@gmail.com";
+  const LINE_ID = "@whynotstudio";
   const LINE_URL = "https://lin.ee/qNY3Uug";
-  const MAILTO_URL = `mailto:${EMAIL}?subject=${encodeURIComponent("合作諮詢｜有何不可設計")}`;
+  const EMAIL_SUBJECT = "合作諮詢｜有何不可設計";
+  const GMAIL_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL)}&su=${encodeURIComponent(EMAIL_SUBJECT)}`;
+
+  function copyEmail(button) {
+    const done = () => {
+      const original = button.textContent;
+      button.textContent = "已複製 Email";
+      window.setTimeout(() => {
+        button.textContent = original;
+      }, 1800);
+    };
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(EMAIL).then(done).catch(() => fallbackCopy(done));
+      return;
+    }
+
+    fallbackCopy(done);
+  }
+
+  function fallbackCopy(done) {
+    const input = document.createElement("textarea");
+    input.value = EMAIL;
+    input.setAttribute("readonly", "");
+    input.style.position = "fixed";
+    input.style.opacity = "0";
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    input.remove();
+    done();
+  }
 
   function createDirectContactPanel() {
     const panel = document.createElement("section");
@@ -28,10 +60,11 @@
             <h3>寄送合作需求</h3>
             <p>適合說明專案類型、使用情境、現有資料與預計時程。</p>
           </div>
-          <a class="button button--primary direct-contact__action" href="${MAILTO_URL}">
-            開啟 Email <span aria-hidden="true">↗</span>
+          <a class="button button--primary direct-contact__action" href="${GMAIL_URL}" target="_blank" rel="noopener noreferrer">
+            開啟 Gmail 撰寫 <span aria-hidden="true">↗</span>
           </a>
-          <a class="direct-contact__value" href="${MAILTO_URL}">${EMAIL}</a>
+          <a class="direct-contact__value" href="${GMAIL_URL}" target="_blank" rel="noopener noreferrer">${EMAIL}</a>
+          <button class="direct-contact__copy" type="button" data-copy-email>複製 Email</button>
         </article>
 
         <article class="direct-contact__channel direct-contact__channel--line">
@@ -43,20 +76,24 @@
           <a class="button button--primary direct-contact__action" href="${LINE_URL}" target="_blank" rel="noopener noreferrer">
             加入 LINE <span aria-hidden="true">↗</span>
           </a>
-          <span class="direct-contact__value">有何不可設計｜官方 LINE</span>
+          <a class="direct-contact__value direct-contact__value--line" href="${LINE_URL}" target="_blank" rel="noopener noreferrer">${LINE_ID}</a>
         </article>
       </div>
 
       <p class="direct-contact__note">
-        本頁不收集或儲存表單資料。點擊後會直接開啟您的 Email 應用程式或 LINE。
+        本頁不收集或儲存表單資料。Email 會開啟 Gmail 撰寫頁；LINE 帳號 ID 與按鈕皆可直接點擊。
       </p>
     `;
+
+    const copyButton = panel.querySelector("[data-copy-email]");
+    copyButton?.addEventListener("click", () => copyEmail(copyButton));
 
     return panel;
   }
 
   function applyDirectContact() {
-    if (window.location.pathname !== "/contact") return;
+    const path = window.location.pathname.replace(/\/$/, "");
+    if (path !== "/contact") return;
 
     const wrap = document.querySelector(".contact-form-wrap");
     if (wrap && wrap.dataset.directContact !== "true") {
@@ -69,7 +106,10 @@
       notice.dataset.directContact = "true";
       notice.innerHTML = `
         <span>CONTACT CHANNEL</span>
-        <p>Email：${EMAIL}<br>LINE：官方帳號直接聯絡</p>
+        <p>
+          Email：<a href="${GMAIL_URL}" target="_blank" rel="noopener noreferrer">${EMAIL}</a><br>
+          LINE：<a href="${LINE_URL}" target="_blank" rel="noopener noreferrer">${LINE_ID}</a>
+        </p>
       `;
     }
   }
@@ -98,6 +138,4 @@
   }
 
   window.addEventListener("popstate", scheduleApply);
-  window.addEventListener("pushState", scheduleApply);
-  window.addEventListener("replaceState", scheduleApply);
 })();
