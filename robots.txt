@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://whynot-tw.github.io/sitemap.xml
