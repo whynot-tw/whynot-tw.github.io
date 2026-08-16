@@ -1,0 +1,8 @@
+# 有何不可設計｜WHYNOT STUDIO
+# GitHub Pages User Pages 部署（https://whynot-tw.github.io/）
+# 允許所有搜尋引擎抓取全站內容，sitemap 指向同網域。
+
+User-agent: *
+Allow: /
+
+Sitemap: https://whynot-tw.github.io/sitemap.xml
