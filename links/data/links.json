@@ -1,6 +1,57 @@
 [
   {
+    "id": "instagram",
+    "type": "social",
+    "title": "Instagram",
+    "url": "https://www.instagram.com/whynot_studio_tw/",
+    "icon": "instagram",
+    "order": 1,
+    "status": "public",
+    "openInNewTab": true
+  },
+  {
+    "id": "line",
+    "type": "social",
+    "title": "LINE",
+    "url": null,
+    "icon": "line",
+    "order": 2,
+    "status": "draft",
+    "openInNewTab": true
+  },
+  {
+    "id": "mail",
+    "type": "social",
+    "title": "Email",
+    "url": null,
+    "icon": "mail",
+    "order": 3,
+    "status": "draft",
+    "openInNewTab": false
+  },
+  {
+    "id": "linkedin",
+    "type": "social",
+    "title": "LinkedIn",
+    "url": null,
+    "icon": "linkedin",
+    "order": 4,
+    "status": "draft",
+    "openInNewTab": true
+  },
+  {
+    "id": "youtube",
+    "type": "social",
+    "title": "YouTube",
+    "url": null,
+    "icon": "youtube",
+    "order": 5,
+    "status": "draft",
+    "openInNewTab": true
+  },
+  {
     "id": "portfolio",
+    "type": "entry",
     "title": "有何不可設計｜作品集",
     "description": "查看平面設計、包裝、排版與資訊整理相關作品。",
     "url": "/works",
@@ -12,6 +63,7 @@
   },
   {
     "id": "illustrator-tools",
+    "type": "entry",
     "title": "Illustrator 工具研究庫",
     "description": "Illustrator 工具、腳本與實務工作流程研究。",
     "url": null,
@@ -23,6 +75,7 @@
   },
   {
     "id": "information-design-lab",
+    "type": "entry",
     "title": "資訊設計實驗室",
     "description": "把複雜資訊整理成更容易閱讀與使用的視覺內容。",
     "url": null,
@@ -34,6 +87,7 @@
   },
   {
     "id": "sewfunlife",
+    "type": "entry",
     "title": "布有趣｜銀髮手作教學",
     "description": "銀髮與樂齡手作教學相關內容。",
     "url": null,
@@ -45,6 +99,7 @@
   },
   {
     "id": "coco-content",
+    "type": "entry",
     "title": "可可手寫／角色內容",
     "description": "手寫字、角色與日常創作內容。",
     "url": null,
@@ -56,6 +111,7 @@
   },
   {
     "id": "pet-talisman-stickers",
+    "type": "entry",
     "title": "寵物符紙貼紙",
     "description": "毛孩福願系列貼紙與相關商品內容。",
     "url": null,
@@ -67,6 +123,7 @@
   },
   {
     "id": "contact",
+    "type": "entry",
     "title": "接案與合作聯絡",
     "description": "設計合作、教學與其他合作需求，從這裡聯絡。",
     "url": "/contact",
