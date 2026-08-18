@@ -13,10 +13,10 @@
     "id": "threads",
     "type": "social",
     "title": "Threads",
-    "url": null,
+    "url": "https://www.threads.com/@whynot_studio_tw",
     "icon": "threads",
     "order": 2,
-    "status": "draft",
+    "status": "public",
     "openInNewTab": true
   },
   {
