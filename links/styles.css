@@ -118,24 +118,24 @@ a {
 
 .social-links {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 14px;
   flex: none;
 }
 
 .social-link {
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--line-dark);
+  width: 30px;
+  height: 30px;
   background: transparent;
   color: var(--ink);
-  transition: border-color .18s var(--ease-out), background-color .18s var(--ease-out), color .18s var(--ease-out), transform .18s var(--ease-out);
+  transition: color .18s var(--ease-out), transform .18s var(--ease-out), opacity .18s var(--ease-out);
 }
 
 .social-link svg {
-  width: 18px;
-  height: 18px;
+  width: 19px;
+  height: 19px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.6;
@@ -148,10 +148,13 @@ a {
 
 .social-link:hover,
 .social-link:focus-visible {
-  border-color: var(--proof-blue);
-  background: var(--proof-blue);
-  color: var(--white);
+  color: var(--proof-blue);
   transform: translateY(-2px);
+}
+
+.social-link:active {
+  color: var(--proof-blue-dark);
+  transform: scale(.92);
 }
 
 .page-intro {
@@ -255,7 +258,7 @@ h1 {
   padding: 22px 0 23px;
   border-bottom: 1px solid var(--line-dark);
   background: transparent;
-  transition: background-color .2s var(--ease-out), padding .2s var(--ease-out);
+  transition: background-color .2s var(--ease-out), padding .2s var(--ease-out), transform .18s var(--ease-out);
 }
 
 .card-copy {
@@ -278,6 +281,7 @@ h1 {
   font-weight: 400;
   line-height: 1.54;
   letter-spacing: -.012em;
+  transition: color .18s var(--ease-out);
 }
 
 .card-description {
@@ -302,19 +306,42 @@ h1 {
   transition: border-color .18s var(--ease-out), background-color .18s var(--ease-out), color .18s var(--ease-out), transform .18s var(--ease-out);
 }
 
-.link-card:hover,
-.link-card:focus-visible {
-  background: var(--white);
-  padding-left: 14px;
-  padding-right: 14px;
+@media (hover: hover) and (pointer: fine) {
+  .link-card:hover,
+  .link-card:focus-visible {
+    background: var(--white);
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .link-card:hover .card-title,
+  .link-card:focus-visible .card-title {
+    color: var(--proof-blue);
+  }
+
+  .link-card:hover .card-arrow,
+  .link-card:focus-visible .card-arrow {
+    border-color: var(--proof-blue);
+    background: var(--proof-blue);
+    color: var(--white);
+    transform: translate(3px, -3px);
+  }
 }
 
-.link-card:hover .card-arrow,
-.link-card:focus-visible .card-arrow {
+.link-card:active {
+  background: var(--paper-deep);
+  transform: scale(.992);
+}
+
+.link-card:active .card-title {
+  color: var(--proof-blue);
+}
+
+.link-card:active .card-arrow {
   border-color: var(--proof-blue);
   background: var(--proof-blue);
   color: var(--white);
-  transform: translate(3px, -3px);
+  transform: translate(1px, -1px);
 }
 
 .load-error {
@@ -391,9 +418,18 @@ h1 {
     letter-spacing: .12em;
   }
 
+  .social-links {
+    gap: 12px;
+  }
+
   .social-link {
-    width: 38px;
-    height: 38px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .social-link svg {
+    width: 18px;
+    height: 18px;
   }
 
   .page-intro {
@@ -443,12 +479,6 @@ h1 {
     gap: 16px;
     min-height: 112px;
     padding: 20px 0 21px;
-  }
-
-  .link-card:hover,
-  .link-card:focus-visible {
-    padding-left: 10px;
-    padding-right: 10px;
   }
 
   .card-title {
