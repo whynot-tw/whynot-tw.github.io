@@ -61,97 +61,65 @@ a {
 .page-shell {
   width: min(100% - 40px, 780px);
   margin: 0 auto;
-  padding: 54px 0 38px;
+  padding: 42px 0 38px;
 }
 
 .profile {
-  position: relative;
-  display: grid;
-  grid-template-columns: 72px minmax(0, 1fr) auto;
-  column-gap: 22px;
-  align-items: start;
-  padding: 28px 0 34px;
   border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--line-dark);
-  text-align: left;
 }
 
-.profile::after {
-  content: "";
-  position: absolute;
-  top: 16px;
-  right: 0;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--proof-blue);
+.brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 88px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
 }
 
 .brand-mark {
-  grid-row: 1 / span 4;
   display: block;
-  width: 60px;
-  height: 60px;
-}
-
-.brand-mark img {
-  display: block;
-  width: 100%;
-  height: 100%;
+  width: 40px;
+  height: 40px;
+  flex: none;
   object-fit: contain;
 }
 
-.eyebrow,
-.card-category,
-.footer,
-.section-heading > p {
-  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+.brand-lockup__text {
+  display: grid;
+  gap: 4px;
+  line-height: 1;
 }
 
-.eyebrow {
-  grid-column: 2;
-  margin: 1px 0 8px;
-  color: var(--proof-blue);
-  font-size: 10px;
-  font-weight: 500;
-  line-height: 1.55;
-  letter-spacing: .075em;
-  text-transform: uppercase;
-}
-
-h1,
-h2,
-h3,
-p {
-  overflow-wrap: anywhere;
-}
-
-h1 {
-  grid-column: 2;
-  margin: 0;
-  font-size: clamp(29px, 6vw, 36px);
+.brand-lockup__text strong {
+  font-size: 17px;
   font-weight: 400;
-  line-height: 1.34;
-  letter-spacing: -.028em;
+  line-height: 1.16;
+  letter-spacing: .045em;
 }
 
-.intro {
-  grid-column: 2;
-  max-width: 31rem;
-  margin: 12px 0 0;
-  color: var(--ink-soft);
-  font-size: 15px;
+.brand-lockup__text small {
+  color: var(--ink-muted);
+  font-family: "Montserrat", sans-serif;
+  font-size: 8.5px;
   font-weight: 400;
-  line-height: 2;
+  line-height: 1.35;
+  letter-spacing: .12em;
 }
 
 .social-links {
-  grid-column: 3;
-  grid-row: 2 / span 2;
   display: flex;
   gap: 8px;
-  align-self: center;
-  margin-top: 2px;
+  flex: none;
 }
 
 .social-link {
@@ -186,8 +154,65 @@ h1 {
   transform: translateY(-2px);
 }
 
+.page-intro {
+  position: relative;
+  padding: 34px 0 38px;
+}
+
+.page-intro::after {
+  content: "";
+  position: absolute;
+  top: 23px;
+  right: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--proof-blue);
+}
+
+.eyebrow,
+.card-category,
+.footer,
+.section-heading > p {
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--proof-blue);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(29px, 6vw, 36px);
+  font-weight: 400;
+  line-height: 1.34;
+  letter-spacing: -.028em;
+}
+
+.intro {
+  max-width: 31rem;
+  margin: 13px 0 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2;
+}
+
 .links-section {
-  margin-top: 70px;
+  margin-top: 66px;
 }
 
 .section-heading {
@@ -333,30 +358,57 @@ h1 {
 @media (max-width: 620px) {
   .page-shell {
     width: min(100% - 32px, 780px);
-    padding-top: 30px;
+    padding-top: 24px;
   }
 
-  .profile {
-    grid-template-columns: 50px minmax(0, 1fr);
-    column-gap: 16px;
-    padding: 24px 0 28px;
+  .brand-row {
+    min-height: 74px;
+    padding: 10px 0;
   }
 
-  .profile::after {
-    top: 13px;
+  .brand-lockup {
+    gap: 10px;
+  }
+
+  .brand-mark {
+    width: 33px;
+    height: 33px;
+  }
+
+  .brand-lockup__text {
+    gap: 3px;
+  }
+
+  .brand-lockup__text strong {
+    font-size: 15px;
+    line-height: 1.16;
+    letter-spacing: .045em;
+  }
+
+  .brand-lockup__text small {
+    font-size: 8px;
+    line-height: 1.35;
+    letter-spacing: .12em;
+  }
+
+  .social-link {
+    width: 38px;
+    height: 38px;
+  }
+
+  .page-intro {
+    padding: 29px 0 31px;
+  }
+
+  .page-intro::after {
+    top: 20px;
     width: 8px;
     height: 8px;
   }
 
-  .brand-mark {
-    width: 44px;
-    height: 44px;
-  }
-
-  .eyebrow,
-  h1,
-  .intro {
-    grid-column: 2;
+  .eyebrow {
+    margin-bottom: 9px;
+    font-size: 9px;
   }
 
   h1 {
@@ -369,19 +421,8 @@ h1 {
     line-height: 1.9;
   }
 
-  .social-links {
-    grid-column: 1 / -1;
-    grid-row: auto;
-    margin-top: 22px;
-  }
-
-  .social-link {
-    width: 38px;
-    height: 38px;
-  }
-
   .links-section {
-    margin-top: 52px;
+    margin-top: 48px;
   }
 
   .section-heading {
