@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f6f2" />
+    <meta
+      name="description"
+      content="有何不可設計品牌總入口：作品、研究、專案與合作聯絡。"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="canonical" href="https://whynot-tw.github.io/links/" />
+
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="有何不可設計｜WHYNOT STUDIO" />
+    <meta property="og:title" content="有何不可設計｜品牌總入口" />
+    <meta
+      property="og:description"
+      content="作品、研究、專案與合作聯絡，都從這裡開始。"
+    />
+    <meta property="og:url" content="https://whynot-tw.github.io/links/" />
+    <meta
+      property="og:image"
+      content="https://whynot-tw.github.io/apple-touch-icon.png"
+    />
+    <meta property="og:image:alt" content="有何不可設計 WHYNOT STUDIO 標誌" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="有何不可設計｜品牌總入口" />
+    <meta
+      name="twitter:description"
+      content="作品、研究、專案與合作聯絡，都從這裡開始。"
+    />
+    <meta
+      name="twitter:image"
+      content="https://whynot-tw.github.io/apple-touch-icon.png"
+    />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@400;500&family=Noto+Sans+TC:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>有何不可設計｜品牌總入口</title>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="profile" aria-labelledby="page-title">
+        <div class="brand-row">
+          <a class="brand-lockup" href="/" aria-label="返回有何不可設計首頁">
+            <img class="brand-mark" src="/images/whynot-symbol-mark.svg" alt="" />
+            <span class="brand-lockup__text">
+              <strong>有何不可設計</strong>
+              <small>WHYNOT STUDIO</small>
+            </span>
+          </a>
+
+          <nav
+            id="social-links"
+            class="social-links"
+            aria-label="社群與聯絡連結"
+            hidden
+          ></nav>
+        </div>
+
+        <div class="page-intro">
+          <p class="eyebrow">LINKS / DIRECTORY</p>
+          <h1 id="page-title">品牌總入口</h1>
+          <p class="intro">資訊整理、視覺設計與實務執行。</p>
+        </div>
+      </header>
+
+      <section class="links-section" aria-labelledby="links-title">
+        <div class="section-heading">
+          <h2 id="links-title">從這裡開始</h2>
+          <p>目前公開中的作品與聯絡入口</p>
+        </div>
+        <div id="link-list" class="link-list" aria-live="polite"></div>
+        <p id="load-error" class="load-error" hidden>
+          入口資料暫時無法載入，請由網站首頁進入。
+        </p>
+      </section>
+
+      <footer class="footer">
+        <a href="/">whynot-tw.github.io</a>
+        <span aria-hidden="true">·</span>
+        <span>有何不可設計</span>
+      </footer>
+    </main>
+
+    <template id="link-card-template">
+      <a class="link-card">
+        <div class="card-copy">
+          <p class="card-category"></p>
+          <h3 class="card-title"></h3>
+          <p class="card-description"></p>
+        </div>
+        <span class="card-arrow" aria-hidden="true">↗</span>
+      </a>
+    </template>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
