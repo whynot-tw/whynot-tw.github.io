@@ -43,10 +43,10 @@
     "id": "linkedin",
     "type": "social",
     "title": "LinkedIn",
-    "url": null,
+    "url": "https://www.linkedin.com/in/liyako",
     "icon": "linkedin",
     "order": 5,
-    "status": "draft",
+    "status": "public",
     "openInNewTab": true
   },
   {
