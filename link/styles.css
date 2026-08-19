@@ -1,6 +1,6 @@
 :root {
   color-scheme: light;
-  --paper: #f7f6f2;
+  --paper: #ffffff;
   --ink: #151515;
   --ink-soft: #55534f;
   --white: #ffffff;
@@ -10,14 +10,14 @@
   --blue-2-end: #3a5b88;
   --blue-3: #446c8e;
   --blue-3-end: #537b9d;
-  --blue-4: #5a7fa0;
-  --blue-4-end: #6b91b0;
-  --blue-5: #7da0c4;
-  --blue-5-end: #8db0ce;
+  --blue-4: #52799c;
+  --blue-4-end: #6289aa;
+  --blue-5: #668aad;
+  --blue-5-end: #7699b9;
   --ease-out: cubic-bezier(.23, 1, .32, 1);
   font-family: "Inter", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
   color: var(--ink);
-  background: var(--paper);
+  background: #ffffff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
@@ -35,7 +35,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: var(--paper);
+  background: #ffffff;
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
 }
@@ -153,13 +153,13 @@ a {
 .link-button--line {
   --swatch: var(--blue-4);
   --swatch-end: var(--blue-4-end);
-  color: #102b43;
+  color: var(--white);
 }
 
 .link-button--mail {
   --swatch: var(--blue-5);
   --swatch-end: var(--blue-5-end);
-  color: #102b43;
+  color: var(--white);
 }
 
 .link-icon {
