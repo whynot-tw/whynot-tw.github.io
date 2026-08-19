@@ -1,3 +1,6 @@
+const backgroundVariant = new URLSearchParams(window.location.search).get("bg") === "b" ? "b" : "a";
+document.documentElement.dataset.background = backgroundVariant;
+
 const LINKS = [
   {
     id: "instagram",

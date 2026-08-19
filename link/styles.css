@@ -1,8 +1,8 @@
 :root {
   color-scheme: light;
-  --paper: #ffffff;
-  --ink: #151515;
-  --ink-soft: #55534f;
+  --paper: #17283a;
+  --ink: #ffffff;
+  --ink-soft: rgba(255, 255, 255, .76);
   --white: #ffffff;
   --blue-1: #1e3a5f;
   --blue-1-end: #294a70;
@@ -17,7 +17,7 @@
   --ease-out: cubic-bezier(.23, 1, .32, 1);
   font-family: "Inter", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
   color: var(--ink);
-  background: #ffffff;
+  background: var(--paper);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
@@ -35,7 +35,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #ffffff;
+  background: var(--paper);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
 }
@@ -76,10 +76,11 @@ a {
   width: 84px;
   height: 84px;
   margin-bottom: 17px;
-  border: 1px solid rgba(21, 21, 21, .16);
+  border: 1px solid rgba(255, 255, 255, .48);
   border-radius: 50%;
   background: transparent;
   transition: border-color .18s var(--ease-out), transform .18s var(--ease-out);
+  filter: brightness(0) invert(1);
 }
 
 .brand-avatar img {
@@ -91,7 +92,7 @@ a {
 
 .brand-avatar:hover,
 .brand-avatar:focus-visible {
-  border-color: var(--blue-2);
+  border-color: rgba(255, 255, 255, .86);
 }
 
 .brand-avatar:active {
@@ -108,7 +109,7 @@ a {
 
 .brand-en {
   margin: 5px 0 0;
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, .76);
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
@@ -296,4 +297,11 @@ a {
   *::after {
     transition-duration: .01ms !important;
   }
+}
+
+/* Background comparison variants: A is the default pure fog-blue; B is opt-in via ?bg=b. */
+html[data-background="b"],
+html[data-background="b"] body {
+  background: linear-gradient(180deg, #17283a 0%, #233b50 100%);
+  background-attachment: fixed;
 }
