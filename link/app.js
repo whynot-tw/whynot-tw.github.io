@@ -1,4 +1,5 @@
-const backgroundVariant = new URLSearchParams(window.location.search).get("bg") === "b" ? "b" : "a";
+const requestedBackground = new URLSearchParams(window.location.search).get("bg");
+const backgroundVariant = ["1", "2", "3"].includes(requestedBackground) ? requestedBackground : "1";
 document.documentElement.dataset.background = backgroundVariant;
 
 const LINKS = [

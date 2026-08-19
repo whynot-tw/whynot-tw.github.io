@@ -1,6 +1,6 @@
 :root {
   color-scheme: light;
-  --paper: #17283a;
+  --paper: #2a3d4a;
   --ink: #ffffff;
   --ink-soft: rgba(255, 255, 255, .76);
   --white: #ffffff;
@@ -299,9 +299,13 @@ a {
   }
 }
 
-/* Background comparison variants: A is the default pure fog-blue; B is opt-in via ?bg=b. */
-html[data-background="b"],
-html[data-background="b"] body {
-  background: linear-gradient(180deg, #17283a 0%, #233b50 100%);
-  background-attachment: fixed;
+/* Solid background comparison variants: selected through ?bg=1, ?bg=2, or ?bg=3. */
+html[data-background="2"],
+html[data-background="2"] body {
+  background: #354a57;
+}
+
+html[data-background="3"],
+html[data-background="3"] body {
+  background: #405865;
 }
