@@ -76,11 +76,11 @@ a {
   width: 84px;
   height: 84px;
   margin-bottom: 17px;
-  border: 1px solid rgba(255, 255, 255, .48);
+  border: 1px solid rgba(23, 40, 58, .28);
   border-radius: 50%;
   background: transparent;
   transition: border-color .18s var(--ease-out), transform .18s var(--ease-out);
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 .brand-avatar img {
@@ -92,7 +92,7 @@ a {
 
 .brand-avatar:hover,
 .brand-avatar:focus-visible {
-  border-color: rgba(255, 255, 255, .86);
+  border-color: rgba(23, 40, 58, .62);
 }
 
 .brand-avatar:active {
@@ -101,6 +101,7 @@ a {
 
 .brand h1 {
   margin: 0;
+  color: #17283a;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.35;
@@ -109,7 +110,7 @@ a {
 
 .brand-en {
   margin: 5px 0 0;
-  color: rgba(255, 255, 255, .76);
+  color: rgba(23, 40, 58, .72);
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
