@@ -85,8 +85,8 @@ a {
 
 .brand-avatar img {
   display: block;
-  width: 54px;
-  height: 54px;
+  width: 67px;
+  height: 67px;
   object-fit: contain;
 }
 
@@ -247,8 +247,8 @@ a {
   }
 
   .brand-avatar img {
-    width: 49px;
-    height: 49px;
+    width: 64px;
+    height: 64px;
   }
 
   .brand h1 {
