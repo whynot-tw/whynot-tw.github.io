@@ -2,6 +2,10 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "routes": [
     {
+      "src": "/link/?$",
+      "dest": "/link/index.html"
+    },
+    {
       "src": "/links/?$",
       "dest": "/links/index.html"
     },
