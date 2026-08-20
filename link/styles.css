@@ -232,12 +232,12 @@ a {
 @media (max-width: 620px) {
   .link-page {
     width: min(100% - 28px, 560px);
-    padding-top: 34px;
-    padding-bottom: 32px;
+    padding-top: 28px;
+    padding-bottom: 28px;
   }
 
   .brand {
-    margin-bottom: 30px;
+    margin-bottom: 24px;
   }
 
   .brand-avatar {
@@ -260,14 +260,14 @@ a {
   }
 
   .link-list {
-    gap: 11px;
+    gap: 10px;
   }
 
   .link-button {
     grid-template-columns: 32px minmax(0, 1fr) auto;
     gap: 13px;
-    min-height: 66px;
-    padding: 14px 16px;
+    min-height: 64px;
+    padding: 13px 16px;
     border-radius: 11px;
   }
 
