@@ -1,0 +1,27 @@
+/*
+ * Homepage Services section — desktop-only layout correction.
+ * Scope intentionally limited to .section--services so mobile and other section markers stay unchanged.
+ */
+@media (min-width: 768px) {
+  .section--services .section-marker.section-marker--right {
+    grid-template-columns: minmax(0, 650px);
+    justify-content: start;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .section--services .section-marker--right .section-marker__copy {
+    grid-area: auto;
+    max-width: 650px;
+    text-align: left;
+  }
+
+  .section--services .section-marker--right .section-marker__copy h2 {
+    white-space: normal;
+  }
+
+  .section--services .section-marker--right .section-marker__copy p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
