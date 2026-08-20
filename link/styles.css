@@ -78,7 +78,7 @@ a {
   margin-bottom: 17px;
   border: 1px solid rgba(23, 40, 58, .28);
   border-radius: 50%;
-  background: transparent;
+  background: #ffffff;
   transition: border-color .18s var(--ease-out), transform .18s var(--ease-out);
   filter: none;
 }
