@@ -94,3 +94,19 @@ LINKS.forEach((item) => {
   anchor.append(createIcon(item), label, arrow);
   list.appendChild(anchor);
 });
+
+const footerSocial = document.querySelector("#footer-social");
+LINKS.forEach((item) => {
+  const anchor = document.createElement("a");
+  anchor.href = item.url;
+  anchor.textContent = item.label;
+  anchor.setAttribute(
+    "aria-label",
+    item.id === "mail" ? "使用電子郵件聯絡有何不可設計" : `前往 ${item.label}`
+  );
+  if (item.external) {
+    anchor.target = "_blank";
+    anchor.rel = "noopener noreferrer";
+  }
+  footerSocial.appendChild(anchor);
+});

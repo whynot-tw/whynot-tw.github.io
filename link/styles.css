@@ -310,3 +310,54 @@ html[data-background="3"],
 html[data-background="3"] body {
   background: #405865;
 }
+
+.link-footer {
+  margin-top: 48px;
+  padding: 24px 0 4px;
+  border-top: 1px solid rgba(71, 105, 128, .25);
+  color: #36596c;
+  text-align: center;
+}
+
+.link-footer__copyright {
+  margin: 0;
+  color: rgba(23, 40, 58, .68);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.link-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 16px;
+  margin-top: 12px;
+}
+
+.link-footer__nav a {
+  color: #36596c;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color .18s var(--ease-out), opacity .18s var(--ease-out);
+}
+
+.link-footer__nav a:hover,
+.link-footer__nav a:focus-visible {
+  color: #17283a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 620px) {
+  .link-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+  }
+
+  .link-footer__nav {
+    gap: 7px 14px;
+    margin-top: 10px;
+  }
+}
