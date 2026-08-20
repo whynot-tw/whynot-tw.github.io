@@ -76,7 +76,7 @@ a {
   width: 84px;
   height: 84px;
   margin-bottom: 17px;
-  border: 1px solid rgba(23, 40, 58, .28);
+  border: 1px solid rgba(71, 105, 128, .42);
   border-radius: 50%;
   background: #ffffff;
   transition: border-color .18s var(--ease-out), transform .18s var(--ease-out);
