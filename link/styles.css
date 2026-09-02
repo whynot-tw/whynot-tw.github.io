@@ -10,10 +10,10 @@
   --blue-2-end: #3a5b88;
   --blue-3: #356184;
   --blue-3-end: #4c7b9a;
-  --blue-4: #356a77;
-  --blue-4-end: #4b7d87;
-  --blue-5: #4b687a;
-  --blue-5-end: #5a7886;
+  --blue-4: #315d87;
+  --blue-4-end: #47789b;
+  --blue-5: #3f6f94;
+  --blue-5-end: #4f789b;
   --ease-out: cubic-bezier(.23, 1, .32, 1);
   font-family: "Inter", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
   color: var(--ink);
