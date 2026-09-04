@@ -50,11 +50,46 @@ body {
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
+  isolation: isolate;
+}
+
+.ambient-stars::before {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse at 20% 16%,
+      rgba(248, 252, 255, .10) 0%,
+      rgba(248, 252, 255, .04) 22%,
+      rgba(248, 252, 255, 0) 46%
+    ),
+    radial-gradient(
+      ellipse at 78% 74%,
+      rgba(72, 112, 139, .14) 0%,
+      rgba(72, 112, 139, .06) 24%,
+      rgba(72, 112, 139, 0) 48%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(36, 63, 85, 0) 0%,
+      rgba(36, 63, 85, .035) 52%,
+      rgba(29, 53, 74, .075) 100%
+    );
+  filter: blur(28px);
+  opacity: .18;
+  transform: translateZ(0) scale(1);
+  will-change: opacity, transform;
+  animation: ambientBreath 7.5s ease-in-out infinite;
+  animation-delay: -.8s;
 }
 
 .ambient-star,
 .ambient-glint {
   position: absolute;
+  z-index: 1;
   display: block;
   transform: translateZ(0);
   will-change: opacity, transform;
@@ -317,6 +352,11 @@ a {
     animation-duration: .01ms !important;
     animation-delay: 0ms !important;
   }
+  .ambient-stars::before {
+    animation: none !important;
+    transform: none !important;
+    opacity: .24;
+  }
   .ambient-star,
   .ambient-glint {
     animation: none !important;
@@ -328,6 +368,17 @@ a {
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ambientBreath {
+  0%, 100% {
+    opacity: .18;
+    transform: translateZ(0) scale(1);
+  }
+  50% {
+    opacity: .30;
+    transform: translateZ(0) scale(1.018);
+  }
 }
 
 @keyframes starBreath {
