@@ -1,44 +1,55 @@
-.ambient-stars::before {
-  background:
+/* V1.3 visual iteration: clean blue depth, no ambient haze, lead star closer to brand. */
+body {
+  background-color: #e8f1f5;
+  background-image:
     radial-gradient(
-      ellipse at 78% 74%,
-      rgba(48, 82, 108, .13) 0%,
-      rgba(48, 82, 108, .055) 30%,
-      rgba(48, 82, 108, 0) 58%
-    ),
-    radial-gradient(
-      ellipse at 24% 20%,
-      rgba(39, 72, 98, .075) 0%,
-      rgba(39, 72, 98, .03) 28%,
-      rgba(39, 72, 98, 0) 54%
+      ellipse at 18% 8%,
+      rgba(250, 253, 255, .94) 0%,
+      rgba(250, 253, 255, .30) 30%,
+      rgba(250, 253, 255, 0) 56%
     ),
     linear-gradient(
       180deg,
-      rgba(27, 52, 73, .015) 0%,
-      rgba(27, 52, 73, .045) 55%,
-      rgba(23, 46, 67, .075) 100%
+      #e8f1f5 0%,
+      #d7e7ed 28%,
+      #bdd4df 52%,
+      #8daabd 70%,
+      #5f819d 82%,
+      #294a70 92%,
+      #1e3a5f 100%
     );
-  filter: blur(32px);
-  opacity: .18;
-  animation: ambientBreathDeep 7.5s ease-in-out infinite;
-  animation-delay: -.8s;
 }
 
-@keyframes ambientBreathDeep {
-  0%, 100% {
-    opacity: .18;
-    transform: translateZ(0) scale(1);
-  }
-  50% {
-    opacity: .34;
-    transform: translateZ(0) scale(1.01);
+/* Remove the V1.1/V1.2 ambient breathing haze; the static gradient provides depth. */
+.ambient-stars::before {
+  display: none;
+}
+
+/* Bring the primary four-point star into the brand-name area. */
+.ambient-star--1 {
+  top: 18%;
+  right: calc(50% - 125px);
+}
+
+/* The footer now sits over the darker end of the gradient. */
+.link-footer {
+  border-top-color: rgba(255, 255, 255, .24);
+  color: rgba(255, 255, 255, .82);
+}
+
+.link-footer__copyright {
+  color: rgba(255, 255, 255, .78);
+}
+
+@media (max-width: 620px) {
+  .ambient-star--1 {
+    top: 22%;
+    right: 22%;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .ambient-stars::before {
-    animation: none !important;
-    transform: none !important;
-    opacity: .24;
+    display: none !important;
   }
 }
