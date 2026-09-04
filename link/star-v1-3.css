@@ -22,8 +22,10 @@ body {
     );
 }
 
+/* Anchor decorative lights to the page, not the visual viewport.
+   This keeps their composition stable during mobile pinch-zoom and across viewport heights. */
 .ambient-stars {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 0;
   overflow: hidden;
