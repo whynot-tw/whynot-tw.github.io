@@ -49,16 +49,17 @@ body {
   animation: starBreath 7.4s ease-in-out infinite;
 }
 
+/* Keep the brand area quiet: all four light sources live in the lower field. */
 .ambient-star--1 {
-  top: 18%;
-  right: calc(50% - 125px);
+  right: 17%;
+  bottom: 23%;
   width: 13px;
   animation-delay: -1.4s;
 }
 
 .ambient-star--2 {
-  left: 11%;
-  bottom: 17%;
+  left: 12%;
+  bottom: 8%;
   width: 9px;
   animation-duration: 8.8s;
   animation-delay: -4.2s;
@@ -75,14 +76,14 @@ body {
 }
 
 .ambient-glint--1 {
-  top: 18%;
-  left: 14%;
+  left: 31%;
+  bottom: 17%;
   animation-delay: -2.6s;
 }
 
 .ambient-glint--2 {
-  right: 16%;
-  bottom: 8%;
+  right: 29%;
+  bottom: 5%;
   width: 3px;
   height: 3px;
   animation-duration: 7.8s;
@@ -105,23 +106,23 @@ body {
 
 @media (max-width: 620px) {
   .ambient-star--1 {
-    top: 22%;
-    right: 22%;
+    right: 11%;
+    bottom: 22%;
   }
 
   .ambient-star--2 {
-    left: 7%;
-    bottom: 16%;
+    left: 8%;
+    bottom: 8%;
   }
 
   .ambient-glint--1 {
-    top: 17%;
-    left: 9%;
+    left: 34%;
+    bottom: 16%;
   }
 
   .ambient-glint--2 {
-    right: 10%;
-    bottom: 7%;
+    right: 26%;
+    bottom: 4%;
   }
 }
 
