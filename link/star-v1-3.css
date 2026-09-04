@@ -1,0 +1,165 @@
+/* Approved V1.3 star-glow theme for the formal /link/ page. */
+body {
+  position: relative;
+  overflow-x: hidden;
+  background-color: #e8f1f5;
+  background-image:
+    radial-gradient(
+      ellipse at 18% 8%,
+      rgba(250, 253, 255, .94) 0%,
+      rgba(250, 253, 255, .30) 30%,
+      rgba(250, 253, 255, 0) 56%
+    ),
+    linear-gradient(
+      180deg,
+      #e8f1f5 0%,
+      #d7e7ed 28%,
+      #bdd4df 52%,
+      #8daabd 70%,
+      #5f819d 82%,
+      #294a70 92%,
+      #1e3a5f 100%
+    );
+}
+
+.ambient-stars {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.ambient-star,
+.ambient-glint {
+  position: absolute;
+  display: block;
+  transform: translateZ(0);
+  will-change: opacity, transform;
+}
+
+.ambient-star {
+  width: 12px;
+  aspect-ratio: 1;
+  background: rgba(248, 253, 255, .96);
+  clip-path: polygon(50% 0%, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0% 50%, 40% 40%);
+  filter: drop-shadow(0 0 5px rgba(244, 251, 255, .62));
+  opacity: .14;
+  animation: starBreath 7.4s ease-in-out infinite;
+}
+
+.ambient-star--1 {
+  top: 18%;
+  right: calc(50% - 125px);
+  width: 13px;
+  animation-delay: -1.4s;
+}
+
+.ambient-star--2 {
+  left: 11%;
+  bottom: 17%;
+  width: 9px;
+  animation-duration: 8.8s;
+  animation-delay: -4.2s;
+}
+
+.ambient-glint {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(250, 253, 255, .94);
+  box-shadow: 0 0 7px rgba(245, 251, 255, .62);
+  opacity: .12;
+  animation: glintBreath 6.2s ease-in-out infinite;
+}
+
+.ambient-glint--1 {
+  top: 18%;
+  left: 14%;
+  animation-delay: -2.6s;
+}
+
+.ambient-glint--2 {
+  right: 16%;
+  bottom: 8%;
+  width: 3px;
+  height: 3px;
+  animation-duration: 7.8s;
+  animation-delay: -5.1s;
+}
+
+.link-page {
+  position: relative;
+  z-index: 1;
+}
+
+.link-footer {
+  border-top-color: rgba(255, 255, 255, .24);
+  color: rgba(255, 255, 255, .82);
+}
+
+.link-footer__copyright {
+  color: rgba(255, 255, 255, .78);
+}
+
+@media (max-width: 620px) {
+  .ambient-star--1 {
+    top: 22%;
+    right: 22%;
+  }
+
+  .ambient-star--2 {
+    left: 7%;
+    bottom: 16%;
+  }
+
+  .ambient-glint--1 {
+    top: 17%;
+    left: 9%;
+  }
+
+  .ambient-glint--2 {
+    right: 10%;
+    bottom: 7%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-star,
+  .ambient-glint {
+    animation: none !important;
+    transform: none !important;
+    opacity: .22;
+  }
+}
+
+@keyframes starBreath {
+  0%, 100% {
+    opacity: .14;
+    transform: scale(.76);
+  }
+  42% {
+    opacity: .58;
+    transform: scale(1.06);
+  }
+  60% {
+    opacity: .34;
+    transform: scale(.94);
+  }
+}
+
+@keyframes glintBreath {
+  0%, 100% {
+    opacity: .10;
+    transform: scale(.74);
+  }
+  48% {
+    opacity: .42;
+    transform: scale(1.18);
+  }
+  68% {
+    opacity: .22;
+    transform: scale(.90);
+  }
+}
