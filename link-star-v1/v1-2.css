@@ -1,4 +1,4 @@
-/* V1.3 visual iteration: clean blue depth, no ambient haze, lead star closer to brand. */
+/* V1.4 visual iteration: keep the approved V1.3 gradient, improve upper-star visibility, and add two sparse lower glints. */
 body {
   background-color: #e8f1f5;
   background-image:
@@ -20,18 +20,52 @@ body {
     );
 }
 
-/* Remove the V1.1/V1.2 ambient breathing haze; the static gradient provides depth. */
+/* Keep V1.3's clean background: no ambient haze layer. */
 .ambient-stars::before {
   display: none;
 }
 
-/* Bring the primary four-point star into the brand-name area. */
+/* Primary four-point star: same approved position, slightly larger and easier to perceive on the pale upper field. */
 .ambient-star--1 {
   top: 18%;
   right: calc(50% - 125px);
+  width: 15px;
+  filter: drop-shadow(0 0 7px rgba(244, 251, 255, .82));
+  animation: leadStarBreath 7.2s ease-in-out infinite;
+  animation-delay: -1.4s;
 }
 
-/* The footer now sits over the darker end of the gradient. */
+/* Upper-left glint: previously almost invisible on the bright background. */
+.ambient-glint--1 {
+  top: 18%;
+  left: 14%;
+  width: 5px;
+  height: 5px;
+  box-shadow: 0 0 9px rgba(245, 251, 255, .82);
+  animation: upperGlintBreath 6.6s ease-in-out infinite;
+  animation-delay: -2.6s;
+}
+
+/* Two additional lower glints keep the lower half from feeling empty without turning it into a star field. */
+.ambient-glint--3 {
+  right: 9%;
+  bottom: 27%;
+  width: 3px;
+  height: 3px;
+  animation-duration: 8.4s;
+  animation-delay: -3.7s;
+}
+
+.ambient-glint--4 {
+  left: 31%;
+  bottom: 8%;
+  width: 2px;
+  height: 2px;
+  animation-duration: 9.2s;
+  animation-delay: -6.1s;
+}
+
+/* Footer sits over the darker end of the gradient. */
 .link-footer {
   border-top-color: rgba(255, 255, 255, .24);
   color: rgba(255, 255, 255, .82);
@@ -41,10 +75,55 @@ body {
   color: rgba(255, 255, 255, .78);
 }
 
+@keyframes leadStarBreath {
+  0%, 100% {
+    opacity: .24;
+    transform: scale(.80);
+  }
+  42% {
+    opacity: .80;
+    transform: scale(1.08);
+  }
+  62% {
+    opacity: .46;
+    transform: scale(.96);
+  }
+}
+
+@keyframes upperGlintBreath {
+  0%, 100% {
+    opacity: .18;
+    transform: scale(.78);
+  }
+  48% {
+    opacity: .62;
+    transform: scale(1.22);
+  }
+  68% {
+    opacity: .32;
+    transform: scale(.94);
+  }
+}
+
 @media (max-width: 620px) {
   .ambient-star--1 {
     top: 22%;
     right: 22%;
+  }
+
+  .ambient-glint--1 {
+    top: 17%;
+    left: 9%;
+  }
+
+  .ambient-glint--3 {
+    right: 7%;
+    bottom: 28%;
+  }
+
+  .ambient-glint--4 {
+    left: 30%;
+    bottom: 8%;
   }
 }
 
