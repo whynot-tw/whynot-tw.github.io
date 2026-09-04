@@ -33,6 +33,7 @@ html {
 
 body {
   position: relative;
+  isolation: isolate;
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
@@ -50,29 +51,30 @@ body::before,
 body::after {
   position: fixed;
   z-index: 0;
-  display: block;
-  width: clamp(320px, 58vw, 720px);
-  height: clamp(320px, 58vw, 720px);
-  border-radius: 50%;
+  inset: -18%;
   pointer-events: none;
   content: "";
-  filter: blur(46px);
-  opacity: .3;
-  will-change: transform;
+  will-change: transform, opacity;
 }
 
 body::before {
-  top: -8%;
-  left: -4%;
-  background: radial-gradient(ellipse, rgba(78, 139, 169, .5) 0%, rgba(97, 155, 181, .22) 38%, rgba(97, 155, 181, 0) 72%);
-  animation: oceanGlowOne 16s ease-in-out infinite alternate;
+  background:
+    radial-gradient(ellipse at 22% 20%, rgba(248, 252, 253, .72) 0%, rgba(240, 249, 251, .34) 18%, rgba(240, 249, 251, 0) 42%),
+    radial-gradient(ellipse at 74% 34%, rgba(224, 243, 249, .56) 0%, rgba(214, 237, 245, .22) 20%, rgba(214, 237, 245, 0) 44%),
+    linear-gradient(118deg, rgba(255, 255, 255, 0) 18%, rgba(246, 252, 253, .28) 35%, rgba(255, 255, 255, 0) 51%, rgba(90, 151, 179, .16) 68%, rgba(255, 255, 255, 0) 84%);
+  filter: blur(30px);
+  opacity: .72;
+  animation: oceanGlowOne 12s ease-in-out infinite alternate;
 }
 
 body::after {
-  right: -8%;
-  bottom: -10%;
-  background: radial-gradient(ellipse, rgba(235, 247, 249, .78) 0%, rgba(208, 232, 240, .34) 38%, rgba(208, 232, 240, 0) 72%);
-  animation: oceanGlowTwo 19s ease-in-out infinite alternate;
+  background:
+    radial-gradient(ellipse at 76% 72%, rgba(77, 137, 166, .24) 0%, rgba(91, 151, 178, .11) 24%, rgba(91, 151, 178, 0) 48%),
+    radial-gradient(ellipse at 34% 82%, rgba(239, 249, 251, .54) 0%, rgba(224, 241, 246, .22) 21%, rgba(224, 241, 246, 0) 46%),
+    linear-gradient(62deg, rgba(255, 255, 255, 0) 20%, rgba(120, 175, 199, .16) 40%, rgba(255, 255, 255, 0) 57%, rgba(246, 252, 253, .22) 73%, rgba(255, 255, 255, 0) 88%);
+  filter: blur(38px);
+  opacity: .62;
+  animation: oceanGlowTwo 15s ease-in-out infinite alternate;
 }
 
 a {
@@ -378,25 +380,31 @@ a {
 
 @keyframes oceanGlowOne {
   0% {
-    transform: translate3d(-4%, -2%, 0) scale(.92);
+    opacity: .58;
+    transform: translate3d(-6%, -3%, 0) rotate(-2deg) scale(1.02);
   }
   50% {
-    transform: translate3d(12%, 10%, 0) scale(1.06);
+    opacity: .82;
+    transform: translate3d(4%, 3%, 0) rotate(1deg) scale(1.07);
   }
   100% {
-    transform: translate3d(28%, -4%, 0) scale(1.14);
+    opacity: .66;
+    transform: translate3d(9%, -1%, 0) rotate(2deg) scale(1.03);
   }
 }
 
 @keyframes oceanGlowTwo {
   0% {
-    transform: translate3d(5%, 6%, 0) scale(1.08);
+    opacity: .5;
+    transform: translate3d(6%, 4%, 0) rotate(1deg) scale(1.04);
   }
   50% {
-    transform: translate3d(-12%, -10%, 0) scale(.94);
+    opacity: .72;
+    transform: translate3d(-4%, -3%, 0) rotate(-1deg) scale(1.09);
   }
   100% {
-    transform: translate3d(-24%, 5%, 0) scale(1.12);
+    opacity: .56;
+    transform: translate3d(-9%, 2%, 0) rotate(-2deg) scale(1.03);
   }
 }
 
