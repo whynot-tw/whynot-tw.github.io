@@ -1,0 +1,44 @@
+.ambient-stars::before {
+  background:
+    radial-gradient(
+      ellipse at 78% 74%,
+      rgba(48, 82, 108, .13) 0%,
+      rgba(48, 82, 108, .055) 30%,
+      rgba(48, 82, 108, 0) 58%
+    ),
+    radial-gradient(
+      ellipse at 24% 20%,
+      rgba(39, 72, 98, .075) 0%,
+      rgba(39, 72, 98, .03) 28%,
+      rgba(39, 72, 98, 0) 54%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(27, 52, 73, .015) 0%,
+      rgba(27, 52, 73, .045) 55%,
+      rgba(23, 46, 67, .075) 100%
+    );
+  filter: blur(32px);
+  opacity: .18;
+  animation: ambientBreathDeep 7.5s ease-in-out infinite;
+  animation-delay: -.8s;
+}
+
+@keyframes ambientBreathDeep {
+  0%, 100% {
+    opacity: .18;
+    transform: translateZ(0) scale(1);
+  }
+  50% {
+    opacity: .34;
+    transform: translateZ(0) scale(1.01);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-stars::before {
+    animation: none !important;
+    transform: none !important;
+    opacity: .24;
+  }
+}
