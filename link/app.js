@@ -91,17 +91,13 @@ LINKS.forEach((item) => {
 
   const label = document.createElement("span");
   label.className = "link-label";
-  label.textContent = item.label;
-
-  const description = document.createElement("span");
-  description.className = "link-description";
-  description.textContent = item.description;
+  label.textContent = item.description;
 
   const arrow = document.createElement("span");
   arrow.className = "link-arrow";
   arrow.setAttribute("aria-hidden", "true");
   arrow.textContent = item.external ? "↗" : "→";
 
-  anchor.append(createIcon(item), label, description, arrow);
+  anchor.append(createIcon(item), label, arrow);
   list.appendChild(anchor);
 });
