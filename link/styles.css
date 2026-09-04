@@ -51,7 +51,7 @@ body::before,
 body::after {
   position: fixed;
   z-index: 0;
-  inset: -18%;
+  inset: -28%;
   pointer-events: none;
   content: "";
   will-change: transform, opacity;
@@ -59,22 +59,32 @@ body::after {
 
 body::before {
   background:
-    radial-gradient(ellipse at 22% 20%, rgba(248, 252, 253, .72) 0%, rgba(240, 249, 251, .34) 18%, rgba(240, 249, 251, 0) 42%),
-    radial-gradient(ellipse at 74% 34%, rgba(224, 243, 249, .56) 0%, rgba(214, 237, 245, .22) 20%, rgba(214, 237, 245, 0) 44%),
-    linear-gradient(118deg, rgba(255, 255, 255, 0) 18%, rgba(246, 252, 253, .28) 35%, rgba(255, 255, 255, 0) 51%, rgba(90, 151, 179, .16) 68%, rgba(255, 255, 255, 0) 84%);
-  filter: blur(30px);
-  opacity: .72;
-  animation: oceanGlowOne 12s ease-in-out infinite alternate;
+    linear-gradient(
+      112deg,
+      rgba(255, 255, 255, 0) 10%,
+      rgba(248, 253, 254, .08) 18%,
+      rgba(248, 253, 254, .42) 27%,
+      rgba(255, 255, 255, .12) 35%,
+      rgba(255, 255, 255, 0) 43%,
+      rgba(240, 249, 252, .06) 52%,
+      rgba(240, 249, 252, .30) 60%,
+      rgba(255, 255, 255, 0) 70%,
+      rgba(98, 155, 181, .16) 80%,
+      rgba(255, 255, 255, 0) 91%
+    );
+  filter: blur(16px);
+  opacity: .9;
+  animation: oceanLightSweep 8.5s ease-in-out infinite alternate;
 }
 
 body::after {
   background:
-    radial-gradient(ellipse at 76% 72%, rgba(77, 137, 166, .24) 0%, rgba(91, 151, 178, .11) 24%, rgba(91, 151, 178, 0) 48%),
-    radial-gradient(ellipse at 34% 82%, rgba(239, 249, 251, .54) 0%, rgba(224, 241, 246, .22) 21%, rgba(224, 241, 246, 0) 46%),
-    linear-gradient(62deg, rgba(255, 255, 255, 0) 20%, rgba(120, 175, 199, .16) 40%, rgba(255, 255, 255, 0) 57%, rgba(246, 252, 253, .22) 73%, rgba(255, 255, 255, 0) 88%);
-  filter: blur(38px);
-  opacity: .62;
-  animation: oceanGlowTwo 15s ease-in-out infinite alternate;
+    radial-gradient(ellipse at 24% 32%, rgba(255, 255, 255, .30) 0%, rgba(244, 251, 253, .13) 25%, rgba(244, 251, 253, 0) 52%),
+    radial-gradient(ellipse at 72% 68%, rgba(83, 143, 171, .22) 0%, rgba(96, 155, 181, .10) 29%, rgba(96, 155, 181, 0) 56%),
+    linear-gradient(68deg, rgba(255, 255, 255, 0) 18%, rgba(105, 163, 188, .14) 37%, rgba(255, 255, 255, 0) 54%, rgba(248, 252, 253, .22) 72%, rgba(255, 255, 255, 0) 88%);
+  filter: blur(28px);
+  opacity: .78;
+  animation: oceanShadeDrift 11s ease-in-out infinite alternate;
 }
 
 a {
@@ -378,33 +388,33 @@ a {
   }
 }
 
-@keyframes oceanGlowOne {
+@keyframes oceanLightSweep {
   0% {
-    opacity: .58;
-    transform: translate3d(-6%, -3%, 0) rotate(-2deg) scale(1.02);
+    opacity: .72;
+    transform: translate3d(-18%, -3%, 0) rotate(-2deg) scale(1.02);
   }
   50% {
-    opacity: .82;
-    transform: translate3d(4%, 3%, 0) rotate(1deg) scale(1.07);
+    opacity: .96;
+    transform: translate3d(2%, 2%, 0) rotate(1deg) scale(1.05);
   }
   100% {
-    opacity: .66;
-    transform: translate3d(9%, -1%, 0) rotate(2deg) scale(1.03);
+    opacity: .78;
+    transform: translate3d(20%, -1%, 0) rotate(3deg) scale(1.02);
   }
 }
 
-@keyframes oceanGlowTwo {
+@keyframes oceanShadeDrift {
   0% {
-    opacity: .5;
-    transform: translate3d(6%, 4%, 0) rotate(1deg) scale(1.04);
+    opacity: .62;
+    transform: translate3d(15%, 4%, 0) rotate(2deg) scale(1.04);
   }
   50% {
-    opacity: .72;
-    transform: translate3d(-4%, -3%, 0) rotate(-1deg) scale(1.09);
+    opacity: .84;
+    transform: translate3d(-2%, -2%, 0) rotate(-1deg) scale(1.08);
   }
   100% {
-    opacity: .56;
-    transform: translate3d(-9%, 2%, 0) rotate(-2deg) scale(1.03);
+    opacity: .66;
+    transform: translate3d(-17%, 3%, 0) rotate(-3deg) scale(1.03);
   }
 }
 
