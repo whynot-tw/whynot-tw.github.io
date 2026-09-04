@@ -32,9 +32,11 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
   background-color: var(--paper);
   background-image:
     radial-gradient(ellipse at 16% 8%, rgba(238, 247, 249, .84) 0%, rgba(238, 247, 249, .34) 31%, rgba(238, 247, 249, 0) 58%),
@@ -42,6 +44,72 @@ body {
     linear-gradient(165deg, #dce9ee 0%, #cedfe7 38%, #bdd4df 70%, #adc8d5 100%);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
+}
+
+.ambient-stars {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ambient-star,
+.ambient-glint {
+  position: absolute;
+  display: block;
+  transform: translateZ(0);
+  will-change: opacity, transform;
+}
+
+.ambient-star {
+  width: 12px;
+  aspect-ratio: 1;
+  background: rgba(248, 253, 255, .96);
+  clip-path: polygon(50% 0%, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0% 50%, 40% 40%);
+  filter: drop-shadow(0 0 5px rgba(244, 251, 255, .62));
+  opacity: .14;
+  animation: starBreath 7.4s ease-in-out infinite;
+}
+
+.ambient-star--1 {
+  top: 10%;
+  right: 12%;
+  width: 13px;
+  animation-delay: -1.4s;
+}
+
+.ambient-star--2 {
+  left: 11%;
+  bottom: 17%;
+  width: 9px;
+  animation-duration: 8.8s;
+  animation-delay: -4.2s;
+}
+
+.ambient-glint {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(250, 253, 255, .94);
+  box-shadow: 0 0 7px rgba(245, 251, 255, .62);
+  opacity: .12;
+  animation: glintBreath 6.2s ease-in-out infinite;
+}
+
+.ambient-glint--1 {
+  top: 18%;
+  left: 14%;
+  animation-delay: -2.6s;
+}
+
+.ambient-glint--2 {
+  right: 16%;
+  bottom: 8%;
+  width: 3px;
+  height: 3px;
+  animation-duration: 7.8s;
+  animation-delay: -5.1s;
 }
 
 a {
@@ -61,6 +129,8 @@ a {
 }
 
 .link-page {
+  position: relative;
+  z-index: 1;
   width: min(100% - 32px, 560px);
   margin: 0 auto;
   padding: 42px 0 44px;
@@ -250,6 +320,26 @@ a {
     padding-bottom: 28px;
   }
 
+  .ambient-star--1 {
+    top: 9%;
+    right: 8%;
+  }
+
+  .ambient-star--2 {
+    left: 7%;
+    bottom: 16%;
+  }
+
+  .ambient-glint--1 {
+    top: 17%;
+    left: 9%;
+  }
+
+  .ambient-glint--2 {
+    right: 10%;
+    bottom: 7%;
+  }
+
   .brand {
     margin-bottom: 24px;
   }
@@ -314,6 +404,13 @@ a {
     animation-duration: .01ms !important;
     animation-delay: 0ms !important;
   }
+
+  .ambient-star,
+  .ambient-glint {
+    animation: none !important;
+    transform: none !important;
+    opacity: .22;
+  }
 }
 
 @keyframes fadeInUp {
@@ -324,6 +421,36 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes starBreath {
+  0%, 100% {
+    opacity: .14;
+    transform: scale(.76);
+  }
+  42% {
+    opacity: .58;
+    transform: scale(1.06);
+  }
+  60% {
+    opacity: .34;
+    transform: scale(.94);
+  }
+}
+
+@keyframes glintBreath {
+  0%, 100% {
+    opacity: .10;
+    transform: scale(.74);
+  }
+  48% {
+    opacity: .42;
+    transform: scale(1.18);
+  }
+  68% {
+    opacity: .22;
+    transform: scale(.90);
   }
 }
 
