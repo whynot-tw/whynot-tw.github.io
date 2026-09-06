@@ -7,6 +7,7 @@
    - three main stars use distinct breathing rhythms
    - mobile CTA stack compacted and footer text visually muted
    - mobile inherits the same gradient as desktop
+   - mobile CTA corners softened to 16px
 */
 body {
   position: relative;
@@ -161,6 +162,7 @@ body {
   .link-button {
     min-height: 58px;
     padding: 10px 16px;
+    border-radius: 16px;
   }
 
   /* Mobile footer is a fixed-height star box: copyright is pinned inside it
