@@ -6,7 +6,7 @@
    - mail CTA lightened while preserving white-text contrast
    - three main stars use distinct breathing rhythms
    - mobile CTA stack compacted and footer text visually muted
-   - mobile gradient uses relative stops so the deep field survives layout-height changes
+   - mobile inherits the same gradient as desktop
 */
 body {
   position: relative;
@@ -149,29 +149,6 @@ body {
 }
 
 @media (max-width: 620px) {
-  body {
-    background-image:
-      radial-gradient(
-        ellipse at 18% 8%,
-        rgba(250, 253, 255, .94) 0%,
-        rgba(250, 253, 255, .30) 30%,
-        rgba(250, 253, 255, 0) 56%
-      ),
-      linear-gradient(
-        180deg,
-        #e8f1f5 0%,
-        #d7e7ed 20%,
-        #c7dbe4 40%,
-        #b6cfdc 60%,
-        #a6c2d1 70%,
-        #97b5c7 76%,
-        #6d8faa 82%,
-        #416583 89%,
-        #294a70 94%,
-        #1e3a5f 100%
-      );
-  }
-
   /* Reduce the vertical visual mass of the CTA stack without narrowing it. */
   .brand {
     margin-bottom: 20px;
