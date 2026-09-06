@@ -3,6 +3,8 @@
    - star field anchored to the footer
    - divider removed
    - desktop gradient reaches the final CTA area earlier
+   - mail CTA lightened while preserving white-text contrast
+   - three main stars use distinct breathing rhythms
 */
 body {
   position: relative;
@@ -30,6 +32,12 @@ body {
 .link-page {
   position: relative;
   z-index: 1;
+}
+
+/* V1.4 CTA polish: make the final button read as a clearer light endpoint. */
+.link-button--mail {
+  --swatch: #507897;
+  --swatch-end: #527b9b;
 }
 
 /* Footer becomes the stable coordinate system for the decorative lights. */
@@ -76,15 +84,15 @@ body {
   clip-path: polygon(50% 0%, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0% 50%, 40% 40%);
   filter: drop-shadow(0 0 5px rgba(244, 251, 255, .58));
   opacity: .12;
-  animation: starBreath 8.8s ease-in-out infinite;
 }
 
 /* Three main stars divide the field into left / center / right zones,
-   with intentionally different heights and sizes. */
+   with intentionally different heights, sizes, and breathing personalities. */
 .ambient-star--1 {
   left: 15%;
   top: 52%;
   width: 12px;
+  animation: starBreathSoft 8.8s ease-in-out infinite;
   animation-delay: -1.6s;
 }
 
@@ -92,7 +100,7 @@ body {
   left: 49%;
   top: 13%;
   width: 14px;
-  animation-duration: 9.6s;
+  animation: starBreathPeak 10.4s ease-in-out infinite;
   animation-delay: -4.1s;
 }
 
@@ -100,7 +108,7 @@ body {
   right: 14%;
   top: 35%;
   width: 11px;
-  animation-duration: 10.2s;
+  animation: starBreathLate 9.3s ease-in-out infinite;
   animation-delay: -6.3s;
 }
 
@@ -213,18 +221,55 @@ body {
   }
 }
 
-@keyframes starBreath {
+/* Left star: broad, gentle pulse with a long fade-out. */
+@keyframes starBreathSoft {
   0%, 100% {
-    opacity: .12;
+    opacity: .11;
     transform: scale(.78);
   }
-  43% {
-    opacity: .48;
-    transform: scale(1.05);
+  38% {
+    opacity: .43;
+    transform: scale(1.03);
   }
-  63% {
-    opacity: .28;
-    transform: scale(.94);
+  66% {
+    opacity: .25;
+    transform: scale(.95);
+  }
+}
+
+/* Center star: brightest focal point, but with a short restrained peak. */
+@keyframes starBreathPeak {
+  0%, 100% {
+    opacity: .10;
+    transform: scale(.76);
+  }
+  49% {
+    opacity: .53;
+    transform: scale(1.06);
+  }
+  58% {
+    opacity: .39;
+    transform: scale(1.00);
+  }
+  73% {
+    opacity: .20;
+    transform: scale(.91);
+  }
+}
+
+/* Right star: stays quiet longer, rises later, then fades more slowly. */
+@keyframes starBreathLate {
+  0%, 18%, 100% {
+    opacity: .09;
+    transform: scale(.76);
+  }
+  57% {
+    opacity: .39;
+    transform: scale(1.02);
+  }
+  78% {
+    opacity: .24;
+    transform: scale(.95);
   }
 }
 
