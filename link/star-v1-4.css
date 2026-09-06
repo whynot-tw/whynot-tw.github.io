@@ -158,11 +158,13 @@ body {
       linear-gradient(
         180deg,
         #e8f1f5 0,
-        #d7e7ed 160px,
-        #bdd4df 300px,
-        #8daabd 430px,
-        #5f819d 545px,
-        #294a70 650px,
+        #d7e7ed 180px,
+        #c7dbe4 360px,
+        #b6cfdc 600px,
+        #a6c2d1 820px,
+        #97b5c7 1030px,
+        #6d8faa 1110px,
+        #294a70 1180px,
         #1e3a5f 100%
       );
   }
