@@ -167,10 +167,11 @@ body {
       );
   }
 
+  /* Compact the footer vertically so copyright stays inside short mobile viewports. */
   .link-footer {
-    margin-top: 28px;
-    min-height: 138px;
-    padding: 108px 0 4px;
+    margin-top: 20px;
+    min-height: 106px;
+    padding: 82px 0 2px;
   }
 
   .link-footer__copyright {
@@ -178,7 +179,7 @@ body {
   }
 
   .ambient-stars {
-    height: 102px;
+    height: 78px;
   }
 
   .ambient-star--1 {
