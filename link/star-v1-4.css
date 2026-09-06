@@ -1,0 +1,244 @@
+/* V1.4 star-field refinement for the formal /link/ page.
+   - 3 main stars + 3 glints
+   - star field anchored to the footer
+   - divider removed
+   - desktop gradient reaches the final CTA area earlier
+*/
+body {
+  position: relative;
+  overflow-x: hidden;
+  background-color: #e8f1f5;
+  background-image:
+    radial-gradient(
+      ellipse at 18% 8%,
+      rgba(250, 253, 255, .94) 0%,
+      rgba(250, 253, 255, .30) 30%,
+      rgba(250, 253, 255, 0) 56%
+    ),
+    linear-gradient(
+      180deg,
+      #e8f1f5 0,
+      #d7e7ed 180px,
+      #bdd4df 340px,
+      #8daabd 480px,
+      #5f819d 600px,
+      #294a70 760px,
+      #1e3a5f 100%
+    );
+}
+
+.link-page {
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer becomes the stable coordinate system for the decorative lights. */
+.link-footer {
+  position: relative;
+  margin-top: 36px;
+  min-height: 146px;
+  padding: 118px 0 4px;
+  border-top: 0;
+  color: rgba(255, 255, 255, .88);
+  overflow: hidden;
+}
+
+.link-footer__copyright {
+  position: relative;
+  z-index: 2;
+  color: rgba(255, 255, 255, .86);
+}
+
+.ambient-stars {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 112px;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.ambient-star,
+.ambient-glint {
+  position: absolute;
+  display: block;
+  transform: translateZ(0);
+  will-change: opacity, transform;
+}
+
+.ambient-star {
+  width: 12px;
+  aspect-ratio: 1;
+  background: rgba(248, 253, 255, .96);
+  clip-path: polygon(50% 0%, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0% 50%, 40% 40%);
+  filter: drop-shadow(0 0 5px rgba(244, 251, 255, .58));
+  opacity: .12;
+  animation: starBreath 8.8s ease-in-out infinite;
+}
+
+/* Three main stars divide the field into left / center / right zones,
+   with intentionally different heights and sizes. */
+.ambient-star--1 {
+  left: 15%;
+  top: 52%;
+  width: 12px;
+  animation-delay: -1.6s;
+}
+
+.ambient-star--2 {
+  left: 49%;
+  top: 13%;
+  width: 14px;
+  animation-duration: 9.6s;
+  animation-delay: -4.1s;
+}
+
+.ambient-star--3 {
+  right: 14%;
+  top: 35%;
+  width: 11px;
+  animation-duration: 10.2s;
+  animation-delay: -6.3s;
+}
+
+.ambient-glint {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(250, 253, 255, .94);
+  box-shadow: 0 0 7px rgba(245, 251, 255, .58);
+  opacity: .10;
+  animation: glintBreath 7.6s ease-in-out infinite;
+}
+
+.ambient-glint--1 {
+  left: 31%;
+  top: 34%;
+  animation-delay: -2.8s;
+}
+
+.ambient-glint--2 {
+  left: 63%;
+  top: 61%;
+  width: 3px;
+  height: 3px;
+  animation-duration: 8.4s;
+  animation-delay: -5.2s;
+}
+
+.ambient-glint--3 {
+  right: 24%;
+  top: 16%;
+  width: 4px;
+  height: 4px;
+  animation-duration: 9.1s;
+  animation-delay: -7.1s;
+}
+
+@media (max-width: 620px) {
+  body {
+    background-image:
+      radial-gradient(
+        ellipse at 18% 8%,
+        rgba(250, 253, 255, .94) 0%,
+        rgba(250, 253, 255, .30) 30%,
+        rgba(250, 253, 255, 0) 56%
+      ),
+      linear-gradient(
+        180deg,
+        #e8f1f5 0,
+        #d7e7ed 160px,
+        #bdd4df 300px,
+        #8daabd 430px,
+        #5f819d 545px,
+        #294a70 650px,
+        #1e3a5f 100%
+      );
+  }
+
+  .link-footer {
+    margin-top: 28px;
+    min-height: 138px;
+    padding: 108px 0 4px;
+  }
+
+  .link-footer__copyright {
+    color: rgba(255, 255, 255, .90);
+  }
+
+  .ambient-stars {
+    height: 102px;
+  }
+
+  .ambient-star--1 {
+    left: 14%;
+    top: 55%;
+  }
+
+  .ambient-star--2 {
+    left: 48%;
+    top: 12%;
+  }
+
+  .ambient-star--3 {
+    right: 12%;
+    top: 37%;
+  }
+
+  .ambient-glint--1 {
+    left: 30%;
+    top: 35%;
+  }
+
+  .ambient-glint--2 {
+    left: 64%;
+    top: 65%;
+  }
+
+  .ambient-glint--3 {
+    right: 25%;
+    top: 18%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-star,
+  .ambient-glint {
+    animation: none !important;
+    transform: none !important;
+    opacity: .22;
+  }
+}
+
+@keyframes starBreath {
+  0%, 100% {
+    opacity: .12;
+    transform: scale(.78);
+  }
+  43% {
+    opacity: .48;
+    transform: scale(1.05);
+  }
+  63% {
+    opacity: .28;
+    transform: scale(.94);
+  }
+}
+
+@keyframes glintBreath {
+  0%, 100% {
+    opacity: .09;
+    transform: scale(.76);
+  }
+  48% {
+    opacity: .36;
+    transform: scale(1.14);
+  }
+  68% {
+    opacity: .20;
+    transform: scale(.92);
+  }
+}
