@@ -167,49 +167,56 @@ body {
       );
   }
 
-  /* Compact the footer vertically so copyright stays inside short mobile viewports. */
+  /* Mobile footer is a fixed-height star box: copyright is pinned inside it
+     instead of being pushed below short browser viewports by top padding. */
   .link-footer {
-    margin-top: 20px;
-    min-height: 106px;
-    padding: 82px 0 2px;
+    margin-top: 6px;
+    min-height: 88px;
+    height: 88px;
+    padding: 0;
   }
 
   .link-footer__copyright {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
     color: rgba(255, 255, 255, .90);
   }
 
   .ambient-stars {
-    height: 78px;
+    height: 64px;
   }
 
   .ambient-star--1 {
     left: 14%;
-    top: 55%;
+    top: 50%;
   }
 
   .ambient-star--2 {
     left: 48%;
-    top: 12%;
+    top: 8%;
   }
 
   .ambient-star--3 {
     right: 12%;
-    top: 37%;
+    top: 31%;
   }
 
   .ambient-glint--1 {
     left: 30%;
-    top: 35%;
+    top: 31%;
   }
 
   .ambient-glint--2 {
     left: 64%;
-    top: 65%;
+    top: 57%;
   }
 
   .ambient-glint--3 {
     right: 25%;
-    top: 18%;
+    top: 14%;
   }
 }
 
