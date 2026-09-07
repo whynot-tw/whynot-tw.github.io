@@ -1,0 +1,195 @@
+/* Why Not /link｜浮光掠影 V1
+   Based on approved V8A preview.
+   Adds controlled-random auto light sweeps plus pointer-position-directed interaction.
+   Existing link visual files remain untouched.
+*/
+
+.link-button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  --origin-x: 50%;
+}
+
+.sweep-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.sweep-beam {
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  width: 58%;
+  opacity: 0;
+  transform: skewX(-14deg);
+  background: linear-gradient(
+    102deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.0285) 24%,
+    rgba(255,255,255,.114) 50%,
+    rgba(255,255,255,.0285) 76%,
+    rgba(255,255,255,0) 100%
+  );
+}
+
+.link-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--origin-x) 50%, rgba(255,255,255,.171), rgba(255,255,255,0) 64%);
+  opacity: 0;
+}
+
+.link-icon,
+.link-label,
+.link-arrow {
+  position: relative;
+  z-index: 1;
+}
+
+/* Auto mode */
+.link-button.sweep-auto-right .sweep-beam--a {
+  left: -78%;
+  animation: whynotSweepAutoRight 2.30s cubic-bezier(.2,.6,.2,1) 1;
+}
+
+.link-button.sweep-auto-left .sweep-beam--a {
+  left: 136%;
+  animation: whynotSweepAutoLeft 2.30s cubic-bezier(.2,.6,.2,1) 1;
+}
+
+.link-button.sweep-auto-right::after,
+.link-button.sweep-auto-left::after {
+  animation: whynotGlowAuto 2.30s ease-out 1;
+}
+
+/* Interactive directional modes */
+.link-button.sweep-hit-left .sweep-beam--a,
+.link-button.sweep-hit-right .sweep-beam--a,
+.link-button.sweep-hit-burst .sweep-beam {
+  background: linear-gradient(
+    102deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.057) 24%,
+    rgba(255,255,255,.209) 50%,
+    rgba(255,255,255,.057) 76%,
+    rgba(255,255,255,0) 100%
+  );
+}
+
+.link-button.sweep-hit-left .sweep-beam--a {
+  left: calc(var(--origin-x) - 29%);
+  animation: whynotSweepHitLeft 1.85s cubic-bezier(.2,.65,.22,1) 1;
+}
+
+.link-button.sweep-hit-right .sweep-beam--a {
+  left: calc(var(--origin-x) - 29%);
+  animation: whynotSweepHitRight 1.85s cubic-bezier(.2,.65,.22,1) 1;
+}
+
+.link-button.sweep-hit-burst .sweep-beam--a {
+  left: calc(var(--origin-x) - 29%);
+  animation: whynotSweepBurstLeft 1.85s cubic-bezier(.2,.65,.22,1) 1;
+}
+
+.link-button.sweep-hit-burst .sweep-beam--b {
+  left: calc(var(--origin-x) - 29%);
+  animation: whynotSweepBurstRight 1.85s cubic-bezier(.2,.65,.22,1) 1;
+}
+
+.link-button.sweep-hit-left::after,
+.link-button.sweep-hit-right::after,
+.link-button.sweep-hit-burst::after,
+.link-button:focus-visible::after {
+  animation: whynotGlowInteractive 1.85s ease-out 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link-button:hover,
+  .link-button:focus-visible {
+    filter: brightness(1.05);
+    box-shadow: 0 10px 22px rgba(25, 47, 73, .16);
+  }
+
+  .link-button:hover .link-arrow,
+  .link-button:focus-visible .link-arrow {
+    transform: translateX(2px);
+  }
+}
+
+.link-button.is-pressed,
+.link-button:active {
+  filter: brightness(1.15);
+  box-shadow: 0 9px 20px rgba(25, 47, 73, .16);
+  transform: translateY(0);
+}
+
+@keyframes whynotSweepAutoRight {
+  0%   { left: -78%; opacity: 0; }
+  10%  { opacity: .72; }
+  78%  { opacity: .72; }
+  100% { left: 136%; opacity: 0; }
+}
+
+@keyframes whynotSweepAutoLeft {
+  0%   { left: 136%; opacity: 0; }
+  10%  { opacity: .72; }
+  78%  { opacity: .72; }
+  100% { left: -78%; opacity: 0; }
+}
+
+@keyframes whynotSweepHitLeft {
+  0%   { left: calc(var(--origin-x) - 29%); opacity: 0; }
+  12%  { opacity: 1; }
+  82%  { opacity: 1; }
+  100% { left: -78%; opacity: 0; }
+}
+
+@keyframes whynotSweepHitRight {
+  0%   { left: calc(var(--origin-x) - 29%); opacity: 0; }
+  12%  { opacity: 1; }
+  82%  { opacity: 1; }
+  100% { left: 136%; opacity: 0; }
+}
+
+@keyframes whynotSweepBurstLeft {
+  0%   { left: calc(var(--origin-x) - 29%); opacity: 0; }
+  10%  { opacity: .98; }
+  78%  { opacity: .98; }
+  100% { left: -78%; opacity: 0; }
+}
+
+@keyframes whynotSweepBurstRight {
+  0%   { left: calc(var(--origin-x) - 29%); opacity: 0; }
+  10%  { opacity: .98; }
+  78%  { opacity: .98; }
+  100% { left: 136%; opacity: 0; }
+}
+
+@keyframes whynotGlowAuto {
+  0%, 100% { opacity: 0; }
+  24% { opacity: .133; }
+  58% { opacity: .076; }
+}
+
+@keyframes whynotGlowInteractive {
+  0%, 100% { opacity: 0; }
+  22% { opacity: .219; }
+  52% { opacity: .133; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sweep-beam,
+  .link-button::after {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+}
